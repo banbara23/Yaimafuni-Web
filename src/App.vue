@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+  <nav>
+    <div class="nav-wrapper blue">
+      <a href="" class="brand-logo center">やいまふに</a>
+    </div>
+  </nav>  
     <router-view></router-view>
   </div>
 </template>
@@ -18,6 +22,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
