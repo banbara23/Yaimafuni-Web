@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-  <nav>
-    <div class="nav-wrapper blue">
-      <a href="" class="brand-logo center">やいまふに</a>
-    </div>
-  </nav>  
+    <Navi></Navi>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Navi from './components/navi';
 export default {
+  components : {
+    Navi
+  },
   name: 'app'
 }
 </script>
