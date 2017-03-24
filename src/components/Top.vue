@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="main">
     <h5>{{ msg }}</h5>
       <a class="waves-effect blue-light btn">
         <router-link to="/foo">Go to Foo</router-link>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'hello',
+  name: 'main',
   data () {
     return {
       msg: '本日の運行情報'
