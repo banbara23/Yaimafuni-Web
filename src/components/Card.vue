@@ -1,9 +1,9 @@
 <template>
   <div class="row">
-    <div class="col s12 m6">
+    <div class="col s6 offset-s3">
     <a harf="">
-      <div class="card teal accent-4 hoverable">
-        <div class="card-content white-text">
+      <div class="card hoverable">
+        <div class="card-content black-text">
           <span class="card-title">{{ title }}</span>
           <p>{{ msg }}</p>
         </div>
@@ -30,4 +30,5 @@ export default {
 .row {
   text-align: left;
 }
+
 </style>

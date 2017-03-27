@@ -1,15 +1,8 @@
 <template>
-  <div class="main">
-    <h5>{{ msg }}</h5>
-    <Card1></Card1>
-    <Card2></Card2>
-    <Collection></Collection>
-      <a class="waves-effect blue-light btn">
-        <router-link to="/foo">Go to Foo</router-link>
-      </a>
-      <a class="waves-effect blue-light btn">
-        <router-link to="/bar">Go to Bar</router-link>
-      </a>
+  <div class="main container">
+    <div class="col s4 offset-s4">
+      <Collection></Collection>
+    </div>
   </div>
 </template>
 
