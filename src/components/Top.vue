@@ -1,19 +1,22 @@
 <template>
-  <div class="main container">
-    <div class="col s4 offset-s4">
-      <Collection></Collection>
+  <div id="main" class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <Collection></Collection>
+      </div>
     </div>
+     <div class="row">
+      <Weather></Weather>
+     </div>
   </div>
 </template>
 
 <script>
-import Card1 from './Card';
-import Card2 from './Card';
+import Weather from './Weather';
 import Collection from './Collection';
 export default {
   components: {
-    Card1,
-    Card2,
+    Weather,
     Collection
   },
   name: 'main',

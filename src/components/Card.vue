@@ -1,6 +1,5 @@
 <template>
-  <div class="row">
-    <div class="col s6 offset-s3">
+    <div class="col s6">
     <a harf="">
       <div class="card hoverable">
         <div class="card-content black-text">
@@ -10,7 +9,6 @@
       </div>
       </a>
     </div>
-  </div> 
 </template>
 
 <script>
