@@ -1,13 +1,19 @@
 <template>
   <div id="main" class="container">
+  <h6>本日の運行情報</h6>
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <Collection></Collection>
+        <router-link to="portList">
+          <Collection></Collection>
+        </router-link>
       </div>
     </div>
-     <div class="row">
-      <Weather></Weather>
-     </div>
+      <div class="row">
+        <h6>本日の天気</h6>
+          <router-link to="/Weather">
+            <Weather></Weather>
+          </router-link>
+      </div>
   </div>
 </template>
 
@@ -30,8 +36,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-a {
-  color: #ffffff;
+h6 {
+  text-align: left;
 }
 </style>

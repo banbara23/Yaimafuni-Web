@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row card">
       <div class="collection">
         <a href="#" class="collection-item black-text">
           竹富島航路

@@ -25,4 +25,8 @@ export default {
   color: #2c3e50;
   background-color: #F5F5F5;
 }
+
+Navi {
+  text-align: left;
+}
 </style>
