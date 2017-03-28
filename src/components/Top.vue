@@ -1,7 +1,7 @@
 <template>
   <div id="main" class="container">
-  <h6>本日の運行情報</h6>
     <div class="row">
+    <h6>本日の運行情報（港別）</h6>
       <div class="col-md-8 col-md-offset-2">
         <router-link to="portList">
           <Collection></Collection>
@@ -9,7 +9,7 @@
       </div>
     </div>
       <div class="row">
-        <h6>本日の天気</h6>
+        <h6>天候情報</h6>
           <router-link to="/Weather">
             <Weather></Weather>
           </router-link>

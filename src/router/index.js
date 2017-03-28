@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Top from '@/components/Top'
-import Foo from '@/components/foo'
-import Bar from '@/components/bar'
 import Weather from '@/components/Weather'
 import PortList from '@/components/PortList'
+import PortDetail from '@/components/PortDetail'
 
 Vue.use(Router)
 
@@ -16,5 +15,6 @@ export default new Router({
     },
     { path: '/weather', component: Weather },
     { path: '/portList', component: PortList },
+    { path: '/portDetail', component: PortDetail }
   ]
 })

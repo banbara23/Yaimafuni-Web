@@ -1,22 +1,16 @@
 <template>
   <div id="main" class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <router-link to="portDetail">
-          <Table></Table>
-        </router-link>
-      </div>
+        <TimeTable_Anei></TimeTable_Anei>
     </div>
   </div>
 </template>
 
 <script>
-import Collection from './Collection';
-import Table from './Table';
+import TimeTable_Anei from './TimeTable_Anei';
 export default {
   components: {
-    Collection,
-    Table
+    TimeTable_Anei
   },
   name: 'main',
   data () {
