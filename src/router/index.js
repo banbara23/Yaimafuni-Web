@@ -14,8 +14,6 @@ export default new Router({
       name: 'Top',
       component: Top
     },
-    { path: '/foo', component: Foo },
-    { path: '/bar', component: Bar },
     { path: '/weather', component: Weather },
     { path: '/portList', component: PortList },
   ]
