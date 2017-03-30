@@ -8,7 +8,7 @@
         </router-link>
       </div>
     </div>
-    
+    <p>{{weather}}</p>
     <div class="row">
       <h6>天候情報</h6>
       <router-link to="/Weather">
@@ -22,27 +22,31 @@
   import Weather from './Weather'
   import Collection from './Collection'
   import firebase from 'firebase'
-  import config from '../../config.json'
-
-  firebase.initializeApp(config);
+  import firebaseconfig from '../../firebase-config.json'
+  firebase.initializeApp(firebaseconfig);
+  const db = firebase.database()
   
-  const weatherRef = firebase.database().ref('weather');
   export default {
-    firebase: {
-      company: firebase.database().ref('/top_company'),
-      port: firebase.database().ref('/top_port'),
-      weather: weatherRef
-    },
-    components: {
-      Weather,
-      Collection
-    },
     name: 'main',
     data() {
       return {
         msg: '本日の運行情報',
-        weather: this.weather
+        weather: {
+          wave:''
+        }
       }
+    },
+    firebase: {
+      company: db.ref('/top_company'),
+      port: db.ref('/top_port'),
+      weather: {
+        source: db.ref('/weather/today/wave/'),
+        asObject:true
+      }
+    },
+    components: {
+      Weather,
+      Collection
     }
   }
 </script>

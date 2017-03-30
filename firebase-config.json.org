@@ -1,0 +1,4 @@
+{
+  "apiKey": "xxx",
+  "databaseURL": "zzz"
+}
