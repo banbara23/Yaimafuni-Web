@@ -1,16 +1,16 @@
 <<template>
   <div>
-  <h6>本日の運行情報</h6>
-  <div class="card">
-    <table class="bordered">
+    <h6>本日の運行情報</h6>
+    <div class="card">
+      <table class="bordered">
         <thead>
           <tr>
-              <th>会社</th>
-              <th>運行</th>
-              <th>コメント</th>
+            <th>会社</th>
+            <th>運行</th>
+            <th>コメント</th>
           </tr>
         </thead>
-
+  
         <tbody>
           <tr>
             <td>安栄観光</td>
@@ -29,12 +29,12 @@
           </tr>
         </tbody>
       </table>
-  </div>
     </div>
+  </div>
 </template>
 
-<style  scoped>
-thead {
-  background-color: #E4E4E4;
-}
+<style scoped>
+  thead {
+    background-color: #E4E4E4;
+  }
 </style>

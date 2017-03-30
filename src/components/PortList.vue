@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <router-link to="portDetail">
-          <Table></Table>
+          <CompanyTable></CompanyTable>
         </router-link>
       </div>
     </div>
@@ -12,11 +12,11 @@
 
 <script>
 import Collection from './Collection';
-import Table from './Table';
+import CompanyTable from './CompanyTable';
 export default {
   components: {
     Collection,
-    Table
+    CompanyTable
   },
   name: 'main',
   data () {
