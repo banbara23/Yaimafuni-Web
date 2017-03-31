@@ -12,16 +12,16 @@
 <script>
   export default {
     name: 'row',
-    props: ['value'],
+    props: ['weatherResponse'],
     data() {
       return {
         title: '今日の天気',
-        msg: this.value
+        msg: ''
       }
     },
     created: () => {
       console.log("called Weather.created()")
-      console.log(this.value)
+      console.log(this.weatherResponse)
     },
   }
 </script>

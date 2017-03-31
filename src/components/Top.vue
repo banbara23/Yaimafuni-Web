@@ -4,7 +4,7 @@
       <h6>会社別の運行情報</h6>
       <div class="col-md-8 col-md-offset-2">
         <router-link to="portList">
-          <TopCompanyCollection></TopCompanyCollection>
+          <top-company-collection />
         </router-link>
       </div>
     </div>
@@ -12,7 +12,7 @@
       <h6>港別の運行情報</h6>
       <div class="col-md-8 col-md-offset-2">
         <router-link to="portList">
-          <Collection></Collection>
+          <collection />
         </router-link>
       </div>
     </div>
@@ -20,7 +20,7 @@
     <div class="row">
       <h6>天候情報</h6>
       <router-link to="/Weather">
-        <Weather :weather="weather"></Weather>
+        <weather :weather="weather" />
       </router-link>
     </div>
   </div>

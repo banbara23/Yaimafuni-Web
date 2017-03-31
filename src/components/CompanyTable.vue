@@ -5,8 +5,8 @@
       <table class="bordered">
         <thead>
           <tr>
-            <th>会社</th>
-            <th>運行</th>
+            <th>会社名</th>
+            <th>ステータス</th>
             <th>コメント</th>
           </tr>
         </thead>
@@ -35,6 +35,6 @@
 
 <style scoped>
   thead {
-    background-color: #E4E4E4;
+    background-color: #E5E5E5;
   }
 </style>
