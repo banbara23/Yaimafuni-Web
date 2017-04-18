@@ -9,13 +9,13 @@ import WeatherDetail from '@/components/WeatherDetail'
 Vue.use(Router)
 
 export default new Router({
-  routes: [{
-      path: '/',
-      name: 'Top',
-      component: Top
-    },
-    { path: '/weather', component: WeatherDetail },
-    { path: '/portList', component: PortList },
-    { path: '/portDetail', component: PortDetail }
-  ]
+    routes: [{
+            path: '/',
+            name: 'Top',
+            component: Top
+        },
+        { path: '/weather', component: WeatherDetail },
+        { path: '/portList', component: PortList },
+        { path: '/portDetail', component: PortDetail }
+    ]
 })
