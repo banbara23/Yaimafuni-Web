@@ -3,7 +3,7 @@
     <div class="row">
       <h6>運行情報（会社別）</h6>
       <div class="col-md-8 col-md-offset-2">
-        <router-link to="portList">
+        <router-link to="companyList">
           <top-company-collection :company="company" />
         </router-link>
       </div>

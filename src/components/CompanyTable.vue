@@ -1,6 +1,7 @@
-<<template>
-  <div>
+<template>
+  <div id="main">
     <h6>本日の運行情報</h6>
+    <p>{{topPort}}</p>
     <div class="card">
       <table class="bordered">
         <thead>
@@ -33,8 +34,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'main',
+  props: ['topPort']
+}
+</script>
+
 <style scoped>
-  thead {
-    background-color: #E5E5E5;
-  }
+thead {
+  background-color: #E5E5E5;
+}
 </style>

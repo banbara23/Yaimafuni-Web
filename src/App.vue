@@ -13,10 +13,10 @@ import firebase from 'firebase'
 import firebaseconfig from '../firebase-config.json'
 firebase.initializeApp(firebaseconfig);
 
-import Navi from './components/Navi';
+import navi from './components/Navigation';
 export default {
   components: {
-    Navi
+    navi
   },
   name: 'app'
 }

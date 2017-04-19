@@ -1,7 +1,7 @@
 <template>
-  <div id="main" class="container">
+  <div id="main">
     <div class="row">
-        <TimeTable_Anei></TimeTable_Anei>
+      <TimeTable_Anei></TimeTable_Anei>
     </div>
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
     TimeTable_Anei
   },
   name: 'main',
-  data () {
+  data() {
     return {
       msg: '本日の運行情報'
     }
