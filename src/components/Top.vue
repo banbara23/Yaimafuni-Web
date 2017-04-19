@@ -1,5 +1,5 @@
 <template>
-  <div id="main" class="container">
+  <div id="main">
     <div class="row">
       <h6>運行情報（会社別）</h6>
       <div class="col-md-8 col-md-offset-2">
