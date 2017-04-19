@@ -3,26 +3,23 @@
     <div class="card hoverable">
       <div class="card-content black-text">
         <span class="card-title">{{ title }}</span>
-        <p>{{ msg }}</p>
+        <p>{{ weather.date }} {{ weather.weather }}</p>
+        <p>波：{{ weather.wave }}</p>
+        <p>風：{{ weather.wind }}</p>
       </div>
     </div>
   </div>
-</template>
+</template>∂
 
 <script>
   export default {
     name: 'row',
-    props: ['weatherResponse'],
+    props: ['weather'],
     data() {
       return {
-        title: '今日の天気',
-        msg: ''
+        title: '今日の天気'
       }
-    },
-    created: () => {
-      console.log("called Weather.created()")
-      console.log(this.weatherResponse)
-    },
+    }
   }
 </script>
 

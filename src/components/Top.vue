@@ -1,7 +1,7 @@
 <template>
   <div id="main" class="container">
     <div class="row">
-      <h6>会社別の運行情報</h6>
+      <h6>運行情報（会社別）</h6>
       <div class="col-md-8 col-md-offset-2">
         <router-link to="portList">
           <top-company-collection />
@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="row">
-      <h6>港別の運行情報</h6>
+      <h6>運行情報（港別）</h6>
       <div class="col-md-8 col-md-offset-2">
         <router-link to="portList">
           <collection />
@@ -18,9 +18,9 @@
     </div>
 
     <div class="row">
-      <h6>天候情報</h6>
+      <h6>天候情報</h6>      
       <router-link to="/Weather">
-        <weather :weather="weather" />
+        <weather :weather="weatherToday" />
       </router-link>
     </div>
   </div>
@@ -39,17 +39,14 @@
     name: 'main',
     data() {
       return {
-        msg: '本日の運行情報',
-        weather: {
-          wave:''
-        }
+        msg: '本日の運行情報'
       }
     },
     firebase: {
       company: db.ref('/top_company'),
       port: db.ref('/top_port'),
-      weather: {
-        source: db.ref('/weather/today/wave/'),
+      weatherToday: {
+        source: db.ref('/weather/today'),
         asObject:true
       }
     },
