@@ -31,8 +31,6 @@
   import Collection from './Collection'
   import TopCompanyCollection from './TopCompanyCollection'
   import firebase from 'firebase'
-  import firebaseconfig from '../../firebase-config.json'
-  firebase.initializeApp(firebaseconfig);
   const db = firebase.database()
   
   export default {

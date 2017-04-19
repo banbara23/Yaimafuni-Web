@@ -7,6 +7,10 @@
 </template>
 
 <script>
+  import firebase from 'firebase'
+  import firebaseconfig from '../firebase-config.json'
+  firebase.initializeApp(firebaseconfig);
+
   import Navi from './components/Navi';
   export default {
     components: {
