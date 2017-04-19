@@ -1,0 +1,35 @@
+ページメモ
+インデントで階層が別れている
+
+■ 遷移構成
+トップページ
+    会社毎運行一覧(会社別)　３ページ（anei, ykf ,dream)
+        港別詳細（タイムテーブルもだす）
+    各港別詳細　７ページ（竹富、小浜、黒島、鳩間、上原、大原、波照間）
+    天気詳細　１ページのみ
+
+■ 全体のコンポーネント構成
+
+Top
+  CompanyDetail
+  PortDetail
+  WeatherDetail
+
+■ ページ単位のコンポーネント構成
+
+トップページ（現在）
+Top
+  TopCompanyCollection
+  TopPortCollection
+  TopWeather
+
+トップページ（理想）
+Top
+  Company
+  Port
+  Weather
+
+会社別の詳細（あんえい）
+AneiDetail
+  Statuses（港ごとの運行状況　7個）
+  PortStatusTimeTable (港別の運行タイムテーブル) ×6くらい？
