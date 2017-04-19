@@ -1,35 +1,47 @@
 <template>
   <div>
-  <div class="card-panel ">
     <div class="row">
-    <div class="col-md-8">
-      <h5>今日の天気</h5>
-      <p>気温：25℃</p>
-      <p>天気：晴れ</p>
-      <p>風：北東の風やや強く</p>
-      <p>波：2メートル</p>
-    </div>
-    </div>
-    </div>
-   <div class="card-panel ">
-   <div class="row">
-    <h5>明日の天気</h5>
-      <p>気温：25℃</p>
-      <p>天気：晴れ</p>
-      <p>風：北東の風やや強く</p>
-      <p>波：2メートル</p>
-    </div>
+      <!-- 今日 -->
+      <div class="card-panel">
+        <h5>今日の天気</h5>
+        <p>{{weather.today.date}} {{weather.today.weather}}</p>
+        <p>気温</p>
+        <p>　最高{{weather.today.temperature.hight}}</p>
+        <p>　最低{{weather.today.temperature.low}}</p>
+        <p>風：{{weather.today.wind}}</p>
+        <p>波：{{weather.today.wave}}</p>
+      </div>
+
+      <!-- 明日 -->
+      <div class="card-panel">
+        <h5>今日の天気</h5>
+        <p>{{weather.tomorrow.date}} {{weather.tomorrow.weather}}</p>
+        <p>気温</p>
+        <p>　最高{{weather.tomorrow.temperature.hight}}</p>
+        <p>　最低{{weather.tomorrow.temperature.low}}</p>
+        <p>風：{{weather.tomorrow.wind}}</p>
+        <p>波：{{weather.tomorrow.wave}}</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import firebase from 'firebase'
+const db = firebase.database()
+
 export default {
   name: 'row',
-  data () {
+  data() {
     return {
       title1: '今日の天気',
       msg1: '北東の風やや強く、波2メートル'
+    }
+  },
+  firebase: {
+    weather: {
+      source: db.ref('/weather'),
+      asObject: true
     }
   }
 }
@@ -40,5 +52,4 @@ export default {
 .row {
   text-align: left;
 }
-
 </style>
