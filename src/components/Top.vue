@@ -11,9 +11,9 @@
     <div class="row">
       <h6>港別の運行情報</h6>
       <div class="col-md-8 col-md-offset-2">
-        <router-link to="portList">
-          <collection />
-        </router-link>
+        
+          <top-port-collection />
+        
       </div>
     </div>
 
@@ -27,8 +27,8 @@
 </template>
 
 <script>
-  import Weather from './Weather'
-  import Collection from './Collection'
+  import Weather from './TopWeather'
+  import TopPortCollection from './TopPortCollection'
   import TopCompanyCollection from './TopCompanyCollection'
   import firebase from 'firebase'
   import firebaseconfig from '../../firebase-config.json'
@@ -55,7 +55,7 @@
     },
     components: {
       Weather,
-      Collection,
+      TopPortCollection,
       TopCompanyCollection
     }
   }
