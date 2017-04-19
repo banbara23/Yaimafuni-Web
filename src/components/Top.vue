@@ -4,7 +4,7 @@
       <h6>運行情報（会社別）</h6>
       <div class="col-md-8 col-md-offset-2">
         <router-link to="portList">
-          <top-company-collection />
+          <top-company-collection :company="company" />
         </router-link>
       </div>
     </div>
@@ -43,8 +43,12 @@
       }
     },
     firebase: {
-      company: db.ref('/top_company'),
+      company: {
+        source: db.ref('/top_company'),
+        asObject:true
+      },
       port: db.ref('/top_port'),
+      
       weatherToday: {
         source: db.ref('/weather/today'),
         asObject:true
