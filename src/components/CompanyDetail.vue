@@ -1,27 +1,43 @@
 <template>
   <div id="main">
     <div class="row">
-      <Card :title='title' :contents='contents' />
+      <h5>{{companyName}}</h5>
+      <Card :title='Statuses.uehara.name'
+            :contents='Statuses.uehara' />
     </div>
     <div class="row">
-      <TimeTable_Anei></TimeTable_Anei>
+      <time-table :header='timeTable.header'
+                  :rows='timeTable.row' />
     </div>
   </div>
 </template>
 
 <script>
-import TimeTable_Anei from './TimeTable_Anei';
-import Card from './Card';
+
+import TimeTable from './TimeTable_Anei';
+import Card from './StatusCard';
+import firebase from 'firebase'
+const db = firebase.database()
+
 export default {
+  name: 'main',
   components: {
-    TimeTable_Anei,
+    TimeTable,
     Card
   },
-  name: 'main',
+  firebase: {
+    Statuses: {
+      source: db.ref('/anei_status/statuses'),
+      asObject: true
+    },
+    timeTable: {
+      source: db.ref('/anei_status_detail_uehara'),
+      asObject: true
+    }
+  },
   data() {
     return {
-      title: 'タイトル',
-      contents: 'コンテンツ'
+      companyName: '安栄観光'
     }
   }
 }

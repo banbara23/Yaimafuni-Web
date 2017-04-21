@@ -1,61 +1,60 @@
 <template>
   <div>
-  <h6>本日の運行情報</h6>
     <table class="bordered">
-        <thead>
-          <tr>
-              <th colspan="2">石垣発</th>
-              <th colspan="2">竹富発</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>09:00</td>
-            <td>通常運行</td>
-            <td>10:00</td>
-            <td>通常運行</td>
-          </tr>
-          <tr>
-            <td>09:00</td>
-            <td>通常運行</td>
-            <td>10:00</td>
-            <td>通常運行</td>
-          </tr>
-          <tr>
-            <td>09:00</td>
-            <td>通常運行</td>
-            <td>10:00</td>
-            <td>通常運行</td>
-          </tr>
-          <tr>
-            <td>09:00</td>
-            <td>通常運行</td>
-            <td>10:00</td>
-            <td>通常運行</td>
-          </tr>
-          <tr>
-            <td>09:00</td>
-            <td>通常運行</td>
-            <td>10:00</td>
-            <td>通常運行</td>
-          </tr>
-          <tr>
-            <td>09:00</td>
-            <td>通常運行</td>
-            <td>10:00</td>
-            <td>通常運行</td>
-          </tr>
-        </tbody>
-      </table>
-  
-    </div>
+      <thead class="blue darken-3 white-text">
+        <tr>
+          <th colspan="2">{{header.left}}</th>
+          <th colspan="2">{{header.right}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="row in rows">
+          <td>{{row.left.time}}</td>
+          <td>{{getStatus(row.left.status)}}</td>
+          <td>{{row.right.time}}</td>
+          <td>{{getStatus(row.right.status)}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
+
+<script>
+import firebase from 'firebase'
+const db = firebase.database()
+
+export default {
+  name: 'main',
+  props: ['header', 'rows'],
+  methods: {
+    getStatus: (status) => {
+      // 仮表示
+      let codeText = '';
+      switch (status.code) {
+        case 'normal':
+          codeText = '○'
+          break;
+        case 'cancel':
+          codeText = '×'
+          break;
+        case 'cation':
+          codeText = '△'
+          break;
+        case 'suspend':
+          codeText = '△'
+          break;
+        default:
+        codeText = '△'
+          break;
+      }
+      return codeText + ' ' + status.text
+    }
+  }
+}
+</script>
 
 <style  scoped>
 table {
   background-color: #FFFFFF;
-}
-thead {
-  background-color: #E4E4E4;
 }
 </style>
