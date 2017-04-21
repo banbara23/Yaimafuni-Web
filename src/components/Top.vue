@@ -3,9 +3,7 @@
     <div class="row">
       <h6>運行情報（会社別）</h6>
       <div class="col-md-8 col-md-offset-2">
-        <router-link to="companyList">
-          <top-company-collection :company="company" />
-        </router-link>
+        <top-company-collection :company="company" />
       </div>
     </div>
     <div class="row">
@@ -25,19 +23,14 @@
 </template>
 
 <script>
-import Weather from './TopWeather'
 import TopPortCollection from './TopPortCollection'
 import TopCompanyCollection from './TopCompanyCollection'
+import Weather from './TopWeather'
 import firebase from 'firebase'
 const db = firebase.database()
 
 export default {
   name: 'main',
-  data() {
-    return {
-      msg: '本日の運行情報'
-    }
-  },
   firebase: {
     company: {
       source: db.ref('/top_company'),

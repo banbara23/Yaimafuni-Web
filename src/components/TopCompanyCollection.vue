@@ -1,36 +1,36 @@
 <template>
   <div id="main">
     <div class="collection">
-      <a href="#"
-         class="collection-item black-text">
-            安栄観光
-            <span class="new badge"
+      <router-link to="/companyDetail"
+                   class="collection-item black-text">
+        安栄観光
+        <span class="new badge"
               v-bind:class="{blue:company.anei.allNormalFlag,
               red:company.anei.cancelFlag,
-              orange:company.anei.cationFlag}" 
+              orange:company.anei.cationFlag}"
               data-badge-caption="">{{company.anei.comment}}</span>
-          </a>
+      </router-link>
   
-      <a href="#"
-        class="collection-item black-text">
-          八重山観光フェリー
+      <router-link to="/companyDetail"
+                   class="collection-item black-text">
+        八重山観光フェリー
         <span class="new badge"
               v-bind:class="{blue:company.ykf.allNormalFlag,
               red:company.ykf.cancelFlag,
-              orange:company.ykf.cationFlag}" 
+              orange:company.ykf.cationFlag}"
               data-badge-caption="">{{company.ykf.comment}}</span>
-      </a>
+      </router-link>
   
-      <a href="#"
-         class="collection-item black-text">
-            石垣ドリーム観光
+      <router-link to="/companyDetail"
+                   class="collection-item black-text">
+        石垣ドリーム観光
         <span class="new badge"
               v-bind:class="{blue:company.dream.allNormalFlag,
               red:company.dream.cancelFlag,
               orange:company.dream.cationFlag,
-              orange:company.dream.suspendFlag}" 
+              orange:company.dream.suspendFlag}"
               data-badge-caption="">{{company.dream.comment}}</span>
-          </a>
+      </router-link>
     </div>
   </div>
 </template>
