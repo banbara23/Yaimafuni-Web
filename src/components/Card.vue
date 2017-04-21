@@ -1,32 +1,25 @@
 <template>
   <div class="row">
-    <div class="col s6">
-      <a harf="">
-        <div class="card hoverable">
-          <div class="card-content black-text">
-            <span class="card-title">{{ title }}</span>
-            <p>{{ msg }}</p>
-          </div>
+    <a harf="">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">{{ title }}</span>
+          <p>{{ contents }}</p>
         </div>
-      </a>
-    </div>
+      </div>
+    </a>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'row',
-    data() {
-      return {
-        title: 'card title',
-        msg: 'I am a very simple card. I am good at containing small bits of information.'
-      }
-    }
-  }
+export default {
+  name: 'row',
+  props: ['title','contents'],
+}
 </script>
 
 <style scorped>
-  .row {
-    text-align: left;
-  }
+.row {
+  text-align: left;
+}
 </style>
