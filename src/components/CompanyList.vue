@@ -9,7 +9,7 @@
       <ul class="collection">
   
         <li class="collection-item">
-          <router-link to="portDetail">
+          <router-link to="companyDetail">
             <span class="title">{{Status.statuses.taketomi.name}}</span>
             <p><span id="status"
                     class="blue-text">{{Status.statuses.taketomi.status.text}}</span>
