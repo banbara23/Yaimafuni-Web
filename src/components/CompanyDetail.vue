@@ -35,9 +35,22 @@ export default {
       asObject: true
     }
   },
-  data() {
-    return {
-      companyName: '安栄観光'
+  computed: {
+    companyName: function() {
+      switch (this.$route.params.id) {
+        case 'anei':
+          return '安栄観光'
+          break;
+        case 'ykf':
+          return '八重山観光フェリー'
+          break;
+        case 'dream':
+          return '石垣ドリーム観光'
+          break;
+        default:
+        return ''
+          break;
+      }
     }
   }
 }
