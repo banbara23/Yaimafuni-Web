@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="main">
     <div class="collection">
       <a href="#"
          class="collection-item black-text">
@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  name: 'row',
+  name: 'main',
   props: ['company'],
   data() {
     return {

@@ -1,57 +1,137 @@
 <template>
-  <div>
+  <div id="main">
     <div class="collection">
+      <!--<p>{{data.uehara}}</p>-->
       <a href="#"
          class="collection-item black-text">
-            竹富島航路
-            <span class="badge right-align" >全便運行</span>
-          </a>
+              竹富島航路
+              <span class="new badge"
+                v-bind:class="{blue:data.taketomi.allNormalFlag,
+                red:data.taketomi.cancelFlag,
+                orange:data.taketomi.suspendFlag,
+                orange:data.taketomi.cationFlag}" 
+                data-badge-caption="">{{data.taketomi.comment}}</span>
+      </a>
       <a href="#"
          class="collection-item black-text">
-            小浜島航路<span class="new badge blue" data-badge-caption="全便運行"></span>
-          </a>
+              小浜島航路
+              <span class="new badge"
+                v-bind:class="{blue:data.kohama.allNormalFlag,
+                red:data.kohama.cancelFlag,
+                orange:data.kohama.suspendFlag,
+                orange:data.kohama.cationFlag}" 
+                data-badge-caption="">{{data.kohama.comment}}</span>
+      </a>
       <a href="#"
          class="collection-item black-text">
-            黒島航路<span class="new badge blue" data-badge-caption="全便運行"></span>
-          </a>
+              黒島航路
+              <span class="new badge"
+                v-bind:class="{blue:data.kuroshima.allNormalFlag,
+                red:data.kuroshima.cancelFlag,
+                orange:data.kuroshima.suspendFlag,
+                orange:data.kuroshima.cationFlag}" 
+                data-badge-caption="">{{data.kuroshima.comment}}</span>
+            </a>
       <a href="#"
          class="collection-item black-text">
-            鳩間島航路
-            <span class="new badge amber" data-badge-caption="注意あり"></span>
-          </a>
+              鳩間島航路
+               <span class="new badge"
+                v-bind:class="{blue:data.hatoma.allNormalFlag,
+                red:data.hatoma.cancelFlag,
+                orange:data.hatoma.suspendFlag,
+                orange:data.hatoma.cationFlag}" 
+                data-badge-caption="">{{data.hatoma.comment}}</span>
+      </a>
       <a href="#"
          class="collection-item black-text">
-            上原(西表島)航路
-            <span class="new badge amber" data-badge-caption="注意あり"></span>
-          </a>
+              上原(西表島)航路
+              <span class="new badge"
+                v-bind:class="{blue:data.uehara.allNormalFlag,
+                red:data.uehara.cancelFlag,
+                orange:data.uehara.suspendFlag,
+                orange:data.uehara.cationFlag}" 
+                data-badge-caption="">{{data.uehara.comment}}</span>
+      </a>
       <a href="#"
-         class="collection-item black-text">
+        class="collection-item black-text">
             大原(西表島)航路
-            <span class="new badge blue" data-badge-caption="全便運行"></span>
-          </a>
+            <span class="new badge"
+              v-bind:class="{blue:data.oohara.allNormalFlag,
+              red:data.oohara.cancelFlag,
+              orange:data.oohara.suspendFlag,
+              orange:data.oohara.cationFlag}" 
+              data-badge-caption="">{{data.oohara.comment}}</span>
+      </a>
       <a href="#"
-         class="collection-item black-text">
-<div>竹富島航路<div class="secondary-content"><span id="status" class="blue-text"><b>通常運航</b></span></div></div>
-          </a>
+        class="collection-item black-text">
+        波照間島航路
+        <span class="new badge"
+              v-bind:class="{blue:data.hateruma.allNormalFlag,
+              red:data.hateruma.cancelFlag,
+              orange:data.hateruma.suspendFlag,
+              orange:data.hateruma.cationFlag}" 
+              data-badge-caption="">{{data.hateruma.comment}}</span>
+      </a>
     </div>
-    
- <ul class="collection with-header">
-        
-        <li class="collection-item"><div>竹富島航路<div class="secondary-content"><span id="status" class="blue-text"><b>通常運航</b></span></div></div></li>
-        <li class="collection-item"><div>小浜島航路<div class="secondary-content"><span id="status" class="red-text"><b>欠航あり</b></span></div></div></li>
-        <li class="collection-item"><div>黒島航路<div class="secondary-content"><span id="status" class="orange-text"><b>未定あり</b></span></div></div></li>
-        <li class="collection-item"><div>鳩間島航路<div class="secondary-content"><span id="status" class="blue-text"><b>通常運航</b></span></div></div></li>
-        <li class="collection-item"><div>上原(西表島)航路<div class="secondary-content"><span id="status" class="blue-text"><b>通常運航</b></span></div></div></li>
-        <li class="collection-item"><div>大原(西表島)航路<div class="secondary-content"><span id="status" class="blue-text"><b>通常運航</b></span></div></div></li>
-        <li class="collection-item"><div>波照間島航路<div class="secondary-content"><span id="status" class="blue-text"><b>通常運航</b></span></div></div></li>
-      </ul>
+  
+  <!--
+    <ul class="collection with-header">
+      <li class="collection-item">
+        <div>竹富島航路
+          <div class="secondary-content"><span id="status"
+                  class="blue-text"><b>通常運航</b></span></div>
+        </div>
+      </li>
+      <li class="collection-item">
+        <div>小浜島航路
+          <div class="secondary-content"><span id="status"
+                  class="red-text"><b>欠航あり</b></span></div>
+        </div>
+      </li>
+      <li class="collection-item">
+        <div>黒島航路
+          <div class="secondary-content"><span id="status"
+                  class="orange-text"><b>未定あり</b></span></div>
+        </div>
+      </li>
+      <li class="collection-item">
+        <div>鳩間島航路
+          <div class="secondary-content"><span id="status"
+                  class="blue-text"><b>通常運航</b></span></div>
+        </div>
+      </li>
+      <li class="collection-item">
+        <div>上原(西表島)航路
+          <div class="secondary-content"><span id="status"
+                  class="blue-text"><b>通常運航</b></span></div>
+        </div>
+      </li>
+      <li class="collection-item">
+        <div>大原(西表島)航路
+          <div class="secondary-content"><span id="status"
+                  class="blue-text"><b>通常運航</b></span></div>
+        </div>
+      </li>
+      <li class="collection-item">
+        <div>波照間島航路
+          <div class="secondary-content"><span id="status"
+                  class="blue-text"><b>通常運航</b></span></div>
+        </div>
+      </li>
+    </ul>
+    -->
   </div>
 </template>
 
+<script>
+export default {
+  name: 'main',
+  props: ['data']
+}
+</script>
+
 <style scorped>
-
-
-  span #status {
-    font-style: borld
-  }
+span#status {
+  font-weight: bold;
+}
 </style>

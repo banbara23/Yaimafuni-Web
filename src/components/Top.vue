@@ -11,7 +11,7 @@
     <div class="row">
       <h6>運行情報（港別）</h6>
       <div class="col-md-8 col-md-offset-2">
-        <top-port-collection />
+        <top-port-collection :data="port" />
       </div>
     </div>
   
@@ -43,8 +43,10 @@ export default {
       source: db.ref('/top_company'),
       asObject: true
     },
-    port: db.ref('/top_port'),
-
+    port: {
+      source: db.ref('/top_port'),
+      asObject: true
+    },
     weatherToday: {
       source: db.ref('/weather/today'),
       asObject: true
