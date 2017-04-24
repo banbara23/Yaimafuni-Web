@@ -1,35 +1,41 @@
 <template>
-  <div id="main">
+  <div id="topCompanyCollection">
     <div class="collection">
       <router-link to="/companyDetail/anei"
                    class="collection-item black-text">
         安栄観光
         <span class="new badge"
-              v-bind:class="{blue:company.anei.allNormalFlag,
-              red:company.anei.cancelFlag,
-              orange:company.anei.cationFlag}"
-              data-badge-caption="">{{company.anei.comment}}</span>
+          v-if="company.anei"
+          v-bind:class="{
+            blue:company.anei.allNormalFlag,
+            red:company.anei.cancelFlag,
+            orange:company.anei.cationFlag}"
+          data-badge-caption="">{{company.anei.comment}}</span>
       </router-link>
   
       <router-link to="/companyDetail/ykf"
                    class="collection-item black-text">
         八重山観光フェリー
         <span class="new badge"
-              v-bind:class="{blue:company.ykf.allNormalFlag,
-              red:company.ykf.cancelFlag,
-              orange:company.ykf.cationFlag}"
-              data-badge-caption="">{{company.ykf.comment}}</span>
+          v-if="company.ykf"
+          v-bind:class="{
+            blue:company.ykf.allNormalFlag,
+            red:company.ykf.cancelFlag,
+            orange:company.ykf.cationFlag}"
+          data-badge-caption="">{{company.ykf.comment}}</span>
       </router-link>
   
       <router-link to="/companyDetail/dream"
                    class="collection-item black-text">
         石垣ドリーム観光
         <span class="new badge"
-              v-bind:class="{blue:company.dream.allNormalFlag,
-              red:company.dream.cancelFlag,
-              orange:company.dream.cationFlag,
-              orange:company.dream.suspendFlag}"
-              data-badge-caption="">{{company.dream.comment}}</span>
+          v-if="company.dream"
+          v-bind:class="{
+            blue:company.dream.allNormalFlag,
+            red:company.dream.cancelFlag,
+            orange:company.dream.cationFlag,
+            amber:company.dream.suspendFlag}"
+          data-badge-caption="">{{company.dream.comment}}</span>
       </router-link>
     </div>
   </div>
@@ -37,7 +43,7 @@
 
 <script>
 export default {
-  name: 'main',
+  name: 'topCompanyCollection',
   props: ['company'],
   data() {
     return {
