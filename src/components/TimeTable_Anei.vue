@@ -1,13 +1,13 @@
 <template>
   <div>
     <table class="bordered">
-      <thead class="blue darken-3 white-text">
+      <thead class="blue darken-3 white-text" v-if="header">
         <tr>
           <th colspan="2">{{header.left}}</th>
           <th colspan="2">{{header.right}}</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody v-if="rows">
         <tr v-for="row in rows">
           <td>{{row.left.time}}</td>
           <td>{{getStatus(row.left.status)}}</td>

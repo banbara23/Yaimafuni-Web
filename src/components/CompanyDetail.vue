@@ -2,8 +2,7 @@
   <div id="main">
     <div class="row">
       <h5>{{companyName}}</h5>
-      <Card :title='Statuses.uehara.name'
-            :contents='Statuses.uehara' />
+      <Card :data='Statuses.uehara' />
     </div>
     <div class="row">
       <time-table :header='timeTable.header'
