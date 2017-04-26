@@ -94,8 +94,6 @@
 </template>
 
 <script>
-import PortDetail from '@/components/PortDetail'
-import Router from 'vue-router'
 export default {
   name: 'topPortCollection',
   props: ['data']

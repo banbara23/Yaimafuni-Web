@@ -2,9 +2,9 @@
   <div class="row">
     <a harf="">
       <div class="card">
-        <div class="card-content">
-          <span class="card-title">{{ title }}</span>
-          <p>{{ contents }}</p>
+        <div class="card-content" v-if="data">
+          <span class="card-title">{{ data.name }}</span>
+          <p>{{ data.comment }}</p>
         </div>
       </div>
     </a>
@@ -14,7 +14,7 @@
 <script>
 export default {
   name: 'row',
-  props: ['title','contents'],
+  props: ['data'],
 }
 </script>
 
