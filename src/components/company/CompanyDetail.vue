@@ -13,7 +13,7 @@
 
 <script>
 
-import TimeTable from './TimeTable_Anei';
+import TimeTable from './CompanyTimeTable';
 import Card from './StatusCard';
 import firebase from 'firebase'
 const db = firebase.database()
