@@ -9,9 +9,9 @@
       </thead>
       <tbody v-if="rows">
         <tr v-for="row in rows">
-          <td>{{row.left.time}}</td>
+          <td>{{row.left.time}}<span v-if="row.left.memo"><br>{{row.left.memo}}</span></td>
           <td>{{getStatus(row.left.status)}}</td>
-          <td>{{row.right.time}}</td>
+          <td>{{row.right.time}}<span v-if="row.right.memo"><br>{{row.right.memo}}</span></td>
           <td>{{getStatus(row.right.status)}}</td>
         </tr>
       </tbody>

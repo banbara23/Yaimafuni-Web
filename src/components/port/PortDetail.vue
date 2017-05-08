@@ -1,12 +1,13 @@
 <template>
   <div id="main">
     <div class="row">
-      <h5>{{companyName}}</h5>
-      <Card :data='Statuses.uehara' />
+      <h5>{{detailStatus.portName}}</h5>
+      <p>{{detailStatus.comment}}</p>
+      <!--<Card :data='detailStatus.comment' />-->
     </div>
     <div class="row">
-      <time-table :header='timeTable.header'
-                  :rows='timeTable.row' />
+      <time-table :header='detailStatus.timeTable.header'
+                  :rows='detailStatus.timeTable.row' />
     </div>
   </div>
 </template>
@@ -24,19 +25,16 @@ export default {
     Card
   },
   firebase: {
-    Statuses: {
-      source: db.ref('/anei_status/statuses'),
-      asObject: true
-    },
-    timeTable: {
-      source: db.ref('/anei_status_detail_uehara'),
+    detailStatus: {
+      source: db.ref('/anei/detail/uehara/'),
       asObject: true
     }
   },
   data() {
     return {
       title: 'タイトル',
-      contents: 'コンテンツ'
+      contents: 'コンテンツ',
+      companyName: '港名'
     }
   }
 }
