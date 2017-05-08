@@ -5,7 +5,7 @@
       <!--
           https://router.vuejs.org/ja/api/router-link.html
           -->
-      <router-link to="/portDetail"
+      <router-link to="/portDetail/taketomi"
                    class="collection-item black-text">
         竹富島航路
         <span class="new badge"
@@ -17,7 +17,7 @@
             orange:data.taketomi.cationFlag}"
             data-badge-caption="">{{data.taketomi.comment}}</span>
       </router-link>
-      <router-link to="/portDetail"
+      <router-link to="/portDetail/kohama"
                    class="collection-item black-text">
         小浜島航路
         <span class="new badge"
@@ -29,7 +29,7 @@
               orange: data.kohama.cationFlag}"
               data-badge-caption="">{{data.kohama.comment}}</span>
       </router-link>
-      <router-link to="/portDetail"
+      <router-link to="/portDetail/kuroshima"
                    class="collection-item black-text">
         黒島航路
         <span class="new badge"
@@ -41,7 +41,7 @@
                 orange:data.kuroshima.cationFlag}"
                 data-badge-caption="">{{data.kuroshima.comment}}</span>
       </router-link>
-      <router-link to="/portDetail"
+      <router-link to="/portDetail/hatoma"
                    class="collection-item black-text">
         鳩間島航路
         <span class="new badge"
@@ -53,7 +53,7 @@
                 orange:data.hatoma.cationFlag}"
                 data-badge-caption="">{{data.hatoma.comment}}</span>
       </router-link>
-      <router-link to="/portDetail"
+      <router-link to="/portDetail/uehara"
                    class="collection-item black-text">
         上原(西表島)航路
         <span class="new badge"
@@ -65,7 +65,7 @@
                 orange:data.uehara.cationFlag}"
                 data-badge-caption="">{{data.uehara.comment}}</span>
       </router-link>
-      <router-link to="/portDetail"
+      <router-link to="/portDetail/oohara"
                    class="collection-item black-text">
         大原(西表島)航路
         <span class="new badge"
@@ -77,7 +77,7 @@
                 orange:data.oohara.cationFlag}"
                 data-badge-caption="">{{data.oohara.comment}}</span>
       </router-link>
-      <router-link to="/portDetail"
+      <router-link to="/portDetail/hateruma"
                    class="collection-item black-text">
         波照間島航路
         <span class="new badge"

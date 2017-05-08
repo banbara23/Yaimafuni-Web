@@ -13,6 +13,6 @@ export default new Router({
   { path: '/', name: 'Top', component: Top },
   { path: '/weather', component: WeatherDetail },
   { path: '/companyDetail/:id', component: CompanyDetail },
-  { path: '/portDetail', component: PortDetail }
+  { path: '/portDetail/:id', component: PortDetail }
   ]
 })

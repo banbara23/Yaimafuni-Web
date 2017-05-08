@@ -27,10 +27,12 @@ export default {
     PortStatusList,
     Card
   },
-  firebase: {
-    data: {
-      source: db.ref('/anei/list'),
-      asObject: true
+  firebase () {
+    return {
+      data: {
+        source: db.ref(this.$route.params.id).child('list'),
+        asObject: true
+      }
     }
   },
   computed: {
