@@ -2,19 +2,19 @@
   <div class="row">
     <a harf="">
       <div class="card">
-        <div class="card-content" v-if="data">
-          <span class="card-title">{{ data.name }}</span>
-          <p>{{ data.comment }}</p>
+        <div class="card-content" v-if="ports">
+          
+          <p>{{ ports }}</p>
         </div>
       </div>
-    </a>
+     </a>
   </div>
 </template>
 
 <script>
 export default {
   name: 'row',
-  props: ['data'],
+  props: ['ports']
 }
 </script>
 

@@ -2,11 +2,12 @@
   <div id="main">
     <div class="row">
       <h5>{{companyName}}</h5>
-      <Card :data='Statuses.uehara' />
+      <p>{{data.comment}}</p>
+      <p>{{data.updateTime}}</p>
+      <!--<Card :ports='data.ports' />-->
     </div>
     <div class="row">
-      <time-table :header='timeTable.header'
-                  :rows='timeTable.row' />
+      <PortStatusList :ports='data.ports' />
     </div>
   </div>
 </template>
@@ -14,6 +15,7 @@
 <script>
 
 import TimeTable from './CompanyTimeTable';
+import PortStatusList from './PortStatusList';
 import Card from './StatusCard';
 import firebase from 'firebase'
 const db = firebase.database()
@@ -22,15 +24,12 @@ export default {
   name: 'main',
   components: {
     TimeTable,
+    PortStatusList,
     Card
   },
   firebase: {
-    Statuses: {
-      source: db.ref('/anei_status/statuses'),
-      asObject: true
-    },
-    timeTable: {
-      source: db.ref('/anei_status_detail_uehara'),
+    data: {
+      source: db.ref('/anei/list'),
       asObject: true
     }
   },
