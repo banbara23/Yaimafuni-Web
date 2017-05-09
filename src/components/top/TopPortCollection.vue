@@ -1,6 +1,7 @@
 <template>
   <div id="topPortCollection">
-    <div class="collection">
+    <div class="card collection with-header">
+      <div class="collection-header cyan white-text"><h5>運行情報（港別）</h5></div>
       <!--<p>{{data.uehara}}</p>-->
       <!--
           https://router.vuejs.org/ja/api/router-link.html

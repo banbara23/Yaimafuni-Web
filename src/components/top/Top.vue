@@ -1,23 +1,21 @@
 <template>
   <div id="main">
     <div class="row">
-      <h6>運行情報（会社別）</h6>
-      <div class="col-md-8 col-md-offset-2">
+      <!--<h6>運行情報（会社別）</h6>-->
+      <div class="col s12 m12 l6">
         <top-company-collection :company="company" />
       </div>
-    </div>
-    <div class="row">
-      <h6>運行情報（港別）</h6>
-      <div class="col-md-8 col-md-offset-2">
+  
+      <!--<h6>運行情報（港別）</h6>-->
+      <div class="col s12 m12 l6">
         <top-port-collection :data="port" />
       </div>
-    </div>
   
-    <div class="row">
-      <h6>天候情報</h6>
-      <router-link to="/Weather">
-        <weather :weather="weatherToday" />
-      </router-link>
+      <div class="col s12 m12 l6">
+        <router-link to="/Weather">
+          <weather :weather="weatherToday" />
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -55,7 +53,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h6 {
-  text-align: left;
-}
+
 </style>
