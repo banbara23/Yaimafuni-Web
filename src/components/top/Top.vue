@@ -1,14 +1,33 @@
 <template>
   <div id="main">
     <div class="row">
-      <!--<h6>運行情報（会社別）</h6>-->
+  
       <div class="col s12 m12 l6">
-        <top-company-collection :company="company" />
+        <port :data="port.taketomi" :title='竹富島航路' />
       </div>
   
-      <!--<h6>運行情報（港別）</h6>-->
       <div class="col s12 m12 l6">
-        <top-port-collection :data="port" />
+        <port :data="port.kohama" :title='小浜島航路' />
+      </div>
+  
+      <div class="col s12 m12 l6">
+        <port :data="port.kuroshima" :title='黒島航路' />
+      </div>
+  
+      <div class="col s12 m12 l6">
+        <port :data="port.oohara" :title='大原航路' />
+      </div>
+  
+      <div class="col s12 m12 l6">
+        <port :data="port.uehara" :title='上原航路' />
+      </div>
+  
+      <div class="col s12 m12 l6">
+        <port :data="port.hatoma" :title='鳩間島航路' />
+      </div>
+  
+      <div class="col s12 m12 l6">
+        <port :data="port.hateruma" :title='波照間島航路' />
       </div>
   
       <div class="col s12 m12 l6">
@@ -21,8 +40,7 @@
 </template>
 
 <script>
-import TopPortCollection from './TopPortCollection'
-import TopCompanyCollection from './TopCompanyCollection'
+import Port from './Port'
 import Weather from './TopWeather'
 import firebase from 'firebase'
 const db = firebase.database()
@@ -30,23 +48,18 @@ const db = firebase.database()
 export default {
   name: 'main',
   firebase: {
-    company: {
-      source: db.ref('/top_company'),
+    weatherToday: {
+      source: db.ref('/weather/today'),
       asObject: true
     },
     port: {
-      source: db.ref('/top_port'),
-      asObject: true
-    },
-    weatherToday: {
-      source: db.ref('/weather/today'),
+      source: db.ref('/port'),
       asObject: true
     }
   },
   components: {
     Weather,
-    TopPortCollection,
-    TopCompanyCollection
+    Port
   }
 }
 </script>
