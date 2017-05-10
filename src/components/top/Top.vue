@@ -4,37 +4,44 @@
   
       <div class="col s12 m12 l6">
         <port :data="port.taketomi"
-              :title="title.taketomi" />
+              :title="taketomi.title"
+              :portCode="taketomi.code" />
       </div>
   
       <div class="col s12 m12 l6">
         <port :data="port.kohama"
-              :title="title.kohama" />
+              :title="kohama.title"
+              :portCode="kohama.code" />
       </div>
   
       <div class="col s12 m12 l6">
         <port :data="port.kuroshima"
-              :title="title.kuroshima" />
+              :title="kuroshima.title"
+              :portCode="kuroshima.code" />
       </div>
   
       <div class="col s12 m12 l6">
         <port :data="port.uehara"
-              :title="title.uehara" />
+              :title="uehara.title"
+              :portCode="uehara.code" />
       </div>
   
       <div class="col s12 m12 l6">
         <port :data="port.hatoma"
-              :title="title.hatoma" />
+              :title="hatoma.title"
+              :portCode="hatoma.code" />
       </div>
   
       <div class="col s12 m12 l6">
         <port :data="port.oohara"
-              :title="title.oohara" />
+              :title="oohara.title"
+              :portCode="oohara.code" />
       </div>
   
       <div class="col s12 m12 l6">
         <port :data="port.hateruma"
-              :title="title.hateruma" />
+              :title="hateruma.title"
+              :portCode="hateruma.code" />
       </div>
   
       <div class="col s12 m12 l6">
@@ -56,15 +63,13 @@ export default {
   name: 'main',
   data() {
     return {
-      title: {
-        taketomi: '竹富島',
-        kohama: '小浜島',
-        kuroshima: '黒島',
-        oohara: '大原(西表島)',
-        uehara: '上原(西表島)',
-        hatoma: '鳩間島',
-        hateruma: '波照間島',
-      }
+      taketomi: { title: '竹富島', code: 'taketomi' },
+      kohama: { title: '小浜島', code: 'kohama' },
+      kuroshima: { title: '黒島', code: 'kuroshima' },
+      oohara: { title: '大原(西表島)', code: 'oohara' },
+      uehara: { title: '上原(西表島)', code: 'uehara' },
+      hatoma: { title: '鳩間島', code: 'hatoma' },
+      hateruma: { title: '波照間島', code: 'hateruma' }
     }
   },
   firebase: {

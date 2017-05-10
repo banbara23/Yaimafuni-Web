@@ -5,7 +5,7 @@
 				<h5>{{title}}</h5>
 			</div>
 			<div v-if="data">
-				<router-link to="/"
+				<router-link :to="{ path:`detail/${portCode}/anei` }"
 				             v-if="data.anei"
 				             class="collection-item black-text">
 					安栄観光
@@ -16,7 +16,7 @@
 								</span>
 				</router-link>
 	
-				<router-link to="/"
+				<router-link :to="{ path:`detail/${portCode}/ykf` }"
 				             v-if="data.ykf"
 				             class="collection-item black-text">
 					八重山観光フェリー
@@ -27,7 +27,7 @@
 								</span>
 				</router-link>
 	
-				<router-link to="/"
+				<router-link :to="{ path:`detail/${portCode}/dream` }"
 				             v-if="data.dream"
 				             class="collection-item black-text">
 					石垣ドリーム観光
@@ -45,7 +45,7 @@
 <script>
 export default {
 	name: 'port',
-	props: ['title', 'data'],
+	props: ['data', 'title', 'portCode' ],
 	computed: {
 		classObject: function () {
 			if (this.data.anei.status.code == 'normal') {
