@@ -1,43 +1,53 @@
 <template>
-  <div id="main">
-    <!--{{detail}}-->
-    <div class="row"
-         v-if="detail">
-      <h5>{{companyName}} > {{detail.portName}}</h5>
-      <!--<p>ステータス：{{detail.status.code}}</p>
-      <h5>{{detail.status.text}}</h5>
-      <h5 v-if="detail.comment">{{detail.comment}}</h5>-->
+  <div id="portDetail">
+    <div class="row">
+      <h5>{{companyName}}</h5>
+      <Card :data='detail' />
     </div>
   
-    <!--<div class="row"
-         v-if="detail.timeTable">
-      <time-table :header='detail.timeTable.header'
-                  :rows='detail.timeTable.row' />
-    </div>-->
+    <div class="row"
+         v-if="timeTable">
+      <time-table :header='timeTable.header'
+                  :rows='timeTable.row' />
+    </div>
   </div>
 </template>
 
 <script>
 import TimeTable from './PortTimeTable';
+import Card from './Card';
 import firebase from 'firebase'
 const db = firebase.database()
 
 export default {
-  name: 'main',
+  name: 'portDetail',
   components: {
-    TimeTable
+    TimeTable,
+    Card
   },
   data() {
     return {
-      params: this.$route.params
+      params: this.$route.params,
+      detail: {
+        status: {
+          code: '',
+          text: ''
+        }
+      }
     }
   },
   firebase() {
     return {
       detail: {
         source: db.ref(this.$route.params.company)
-          .child('/detail/')
           .child(this.$route.params.port),
+        asObject: true
+      },
+      timeTable: {
+        source: db.ref(this.$route.params.company)
+          .child('detail')
+          .child(this.$route.params.port)
+          .child('timeTable'),
         asObject: true
       }
     }
@@ -47,41 +57,30 @@ export default {
       switch (this.$route.params.port) {
         case 'taketomi':
           return '竹富島航路'
-          break;
         case 'kohama':
           return '小浜島航路'
-          break;
         case 'kuroshima':
           return '黒島航路'
-          break;
         case 'uehara':
           return '上原(西表島)航路'
-          break;
         case 'oohara':
           return '大原(西表島)航路'
-          break;
         case 'hatoma':
           return '鳩間島航路'
-          break;
         case 'hateruma':
           return '波照間島航路'
-          break;
         default:
           return ''
-          break;
       }
     },
     companyName: function () {
       switch (this.$route.params.company) {
         case 'anei':
           return '安栄観光'
-          break;
         case 'ykf':
           return '八重山観光フェリー'
-          break;
         case 'dream':
           return '石垣ドリーム観光'
-          break;
       }
     }
   }

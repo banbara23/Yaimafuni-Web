@@ -1,25 +1,55 @@
 <template>
-  <div class="row">
-    <a harf="">
-      <div class="card">
-        <div class="card-content" v-if="data">
-          <span class="card-title">{{ data.name }}</span>
-          <p>{{ data.comment }}</p>
-        </div>
+  <div class="detailCard">
+    <div class="card">
+      <div class="card-panel" v-if="data">
+        <span class="card-title"> {{data.portName}}</span>
+        <h5 :class="getClass">{{data.status.text}}</h5>
+        <p v-if="data.comment"> {{data.comment}}</p>
       </div>
-    </a>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'row',
+  name: 'detailCard',
   props: ['data'],
+  data() {
+    return {
+      data: {
+        comment: '',
+        status: {
+          code: '読み込み中',
+          text: ''
+        }
+      }
+    }
+  },
+  computed: {
+    getClass: function () {
+      let color;
+      switch (this.data.status.code) {
+        case 'normal':
+          color = 'blue';
+          break;
+        case 'cancel':
+          color = 'red';
+          break;
+        case 'cation':
+          color = 'orange';
+          break;
+        case 'suspend':
+          color = 'amber';
+          break;
+        default:
+          color = 'orange';
+      }
+      return `${color}-text`
+    }
+  }
 }
 </script>
 
 <style scorped>
-.row {
-  text-align: left;
-}
+
 </style>

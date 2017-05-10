@@ -30,21 +30,27 @@ export default {
     getStatus: (status) => {
       // 仮表示
       let codeText = '';
+      let statusText = '';
       switch (status.code) {
         case 'normal':
           codeText = '○'
+          statusText = '通常運行'
           break;
         case 'cancel':
           codeText = '×'
+          statusText = '欠航'
           break;
         case 'cation':
           codeText = '△'
+          statusText = '注意'
           break;
         case 'suspend':
           codeText = '△'
+          statusText = '運休'
           break;
         default:
         codeText = '△'
+        statusText = '注意'
           break;
       }
       return codeText + ' ' + status.text
