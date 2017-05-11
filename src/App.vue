@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <navi />
-    <br />
     <div class="container">
       <router-view></router-view>
     </div>
+    <myfooter />
   </div>
 </template>
 
@@ -14,9 +14,11 @@ import firebaseconfig from '../firebase-config.json'
 firebase.initializeApp(firebaseconfig);
 
 import navi from './components/Navigation';
+import myfooter from './components/Footer';
 export default {
   components: {
-    navi
+    navi,
+    myfooter
   },
   name: 'app'
 }
@@ -34,6 +36,10 @@ a {
   text-align: center;
   color: #2c3e50;
   background-color: #00b1cd;
+  background-size: 40%;
+  background-image: url('./assets/sun.svg');
+  background-repeat: no-repeat;
+  background-position: right top;
 }
 
 Navi {
