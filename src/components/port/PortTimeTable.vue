@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id='main'>
     <table class="bordered">
       <thead class="blue darken-3 white-text" v-if="header">
         <tr>
@@ -9,10 +9,22 @@
       </thead>
       <tbody v-if="rows">
         <tr v-for="row in rows">
-          <td>{{row.left.time}}<span v-if="row.left.memo"><br>{{row.left.memo}}</span></td>
-          <td>{{getStatus(row.left.status)}}</td>
-          <td>{{row.right.time}}<span v-if="row.right.memo"><br>{{row.right.memo}}</span></td>
-          <td>{{getStatus(row.right.status)}}</td>
+          <td>{{row.left.time}}
+            <span v-if="row.left.memo">
+              <br>{{row.left.memo}}</span>
+          </td>
+          <td>
+            <i class="material-icons blue-text">{{getIcon(row.left.status.code)}}</i>
+            {{row.left.status.text}}</td>
+          <td>
+            {{row.right.time}}
+            <span v-if="row.right.memo">
+              <br>{{row.right.memo}}</span>
+          </td>
+          <td>
+            <i class="material-icons blue-text">{{getIcon(row.right.status.code)}}</i>
+            {{row.right.status.text}}</td>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -34,26 +46,38 @@ export default {
       switch (status.code) {
         case 'normal':
           codeText = '○'
-          statusText = '通常運行'
           break;
         case 'cancel':
           codeText = '×'
-          statusText = '欠航'
           break;
         case 'cation':
           codeText = '△'
-          statusText = '注意'
           break;
         case 'suspend':
           codeText = '△'
-          statusText = '運休'
+          break;
+        case '':
+          codeText = ''
           break;
         default:
-        codeText = '△'
-        statusText = '注意'
+          codeText = '△'
           break;
       }
       return codeText + ' ' + status.text
+    },
+    getIcon: function (statusCode) {
+      switch (statusCode) {
+        case 'normal':
+          return 'ic_radio_button_unchecked'
+        case 'cancel':
+          return 'ic_clear'
+        case 'cation':
+          return 'ic_change_history'
+        case 'suspend':
+          return 'ic_change_history'
+        default:
+          return ''
+      }
     }
   }
 }
