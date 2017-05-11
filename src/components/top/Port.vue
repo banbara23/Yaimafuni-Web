@@ -1,7 +1,7 @@
 <template>
 	<div id="port">
 		<div class="card collection with-header">
-			<div class="collection-header light-blue white-text">
+			<div class="collection-header orange darken-1 white-text">
 				<h5>{{title}}</h5>
 			</div>
 			<div v-if="data">
