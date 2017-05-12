@@ -69,7 +69,36 @@ export default {
       oohara: { title: '大原(西表島)', code: 'oohara' },
       uehara: { title: '上原(西表島)', code: 'uehara' },
       hatoma: { title: '鳩間島', code: 'hatoma' },
-      hateruma: { title: '波照間島', code: 'hateruma' }
+      hateruma: { title: '波照間島', code: 'hateruma' },
+      port: null
+    }
+  },
+  created() {
+    // 初期値設定
+    const initStatus = {
+      anei: {
+        status: null
+      },
+      ykf: {
+        status: null
+      },
+      dream: {
+        status: null
+      }
+    };
+
+    this.port = {
+      taketomi: initStatus,
+      kohama: initStatus,
+      kuroshima: initStatus,
+      oohara: initStatus,
+      uehara: initStatus,
+      hatoma: initStatus,
+      hateruma: {
+          anei: {
+            status: null
+          }
+      }
     }
   },
   firebase: {
