@@ -1,8 +1,8 @@
 <template>
   <div id="portDetail">
     <div class="row">
-      <h5>{{companyName}}</h5>
-      <Card :data='detail' />
+      <!--<h5>{{companyName}}</h5>-->
+      <Card :data='detail' :company='companyName' />
     </div>
   
     <div class="row"

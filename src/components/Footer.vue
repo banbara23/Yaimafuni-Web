@@ -2,10 +2,11 @@
   <footer id='footer' class="page-footer blue darken-2">
     <div class="container">
       <div class="row">
-        <!--<div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-        </div>-->
+        <div class="col l6 s12">
+          <h5 class="white-text">やいまふに について</h5>
+          <p class="grey-text text-lighten-4">石垣島と八重山諸島を結ぶ船の運行情報を、リアルタイムに表示しています。<br />また、八重山方言で八重山地方を「やいま」、船を「ふに」といいます。</p>
+          <p class="grey-text text-lighten-4"></p>
+        </div>
 
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Links</h5>

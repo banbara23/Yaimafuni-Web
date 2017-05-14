@@ -1,8 +1,8 @@
 <template>
   <div class="detailCard">
     <div class="card">
-      <div class="card-panel" v-if="data">
-        <span class="card-title"> {{data.portName}}</span>
+      <div class="card-content" v-if="data">
+        <span class="card-title"> {{data.portName}}  - {{company}}</span>
         <h5 :class="getClass">{{data.status.text}}</h5>
         <p v-if="data.comment"> {{data.comment}}</p>
       </div>
@@ -13,7 +13,7 @@
 <script>
 export default {
   name: 'detailCard',
-  props: ['data'],
+  props: ['data', 'company'],
   data() {
     return {
       data: {
