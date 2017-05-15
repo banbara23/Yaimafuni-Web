@@ -3,28 +3,35 @@
     <table class="bordered">
       <thead class="white-text blue darken-3">
         <tr>
-          <th v-if="header.left" class="center"
+          <th v-if="header.left"
+              class="center"
               colspan="2">{{header.left}}</th>
-          <th v-if="header.right" class="center"
+          <th v-if="header.right"
+              class="center"
               colspan="2">{{header.right}}</th>
         </tr>
       </thead>
-      <tbody class="white" v-if="rows">
+      <tbody class="white"
+             v-if="rows">
         <tr v-for="row in rows">
-          <td class="center">{{row.left.time}}
+          <td v-if="row.left"
+              class="center">{{row.left.time}}
             <span v-if="row.left.memo">
-                  <br>{{row.left.memo}}</span>
+                    <br>{{row.left.memo}}</span>
           </td>
-          <td class="valign-wrapper">
+          <td v-if="row.left"
+              class="valign-wrapper">
             <img v-if="row.left.status.code"
                  :src="`../../static/${row.left.status.code}.svg`"> {{row.left.status.text}}
           </td>
-          <td class="center">
+          <td v-if="row.left"
+              class="center">
             {{row.right.time}}
             <span v-if="row.right.memo">
-                  <br>{{row.right.memo}}</span>
+                    <br>{{row.right.memo}}</span>
           </td>
-          <td class="valign-wrapper">
+          <td v-if="row.left"
+              class="valign-wrapper">
             <img v-if="row.right.status.code"
                  :src="`../../static/${row.right.status.code}.svg`"> {{row.right.status.text}}
           </td>

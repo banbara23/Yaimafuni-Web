@@ -61,24 +61,29 @@ export default {
       }
     }
 
-    this.timeTable = {
-      header: {
-        left: ' ',
-        right: ' '
-      }
+    if (this.$route.params.company == 'dream') {
+      this.timeTable = null;
     }
-    this.timeTable.row = [{
-      left: {
-        time: '',
-        memo: '',
-        status: {}
-      },
-      right: {
-        time: '',
-        memo: '',
-        status: {}
+    else {
+      this.timeTable = {
+        header: {
+          left: ' ',
+          right: ' '
+        }
       }
-    }]
+      this.timeTable.row = [{
+        left: {
+          time: '',
+          memo: '',
+          status: {}
+        },
+        right: {
+          time: '',
+          memo: '',
+          status: {}
+        }
+      }]
+    }
   },
   computed: {
     portName: function () {
