@@ -2,7 +2,8 @@
   <div id="portDetail">
     <div class="row">
       <!--<h5>{{companyName}}</h5>-->
-      <Card :data='detail' :company='companyName' />
+      <Card :data='detail'
+            :company='companyName' />
     </div>
   
     <div class="row"
@@ -28,11 +29,10 @@ export default {
   data() {
     return {
       params: this.$route.params,
-      detail: {
-        status: {
-          code: '',
-          text: ''
-        }
+      detail: null,
+      timeTable: {
+        header: null,
+        row: null
       }
     }
   },
@@ -52,8 +52,37 @@ export default {
       }
     }
   },
+  created() {
+    this.detail = {
+      portName: '',
+      status: {
+        code: '',
+        text: ''
+      }
+    }
+
+    this.timeTable = {
+      header: {
+        left: ' ',
+        right: ' '
+      }
+    }
+    this.timeTable.row = [{
+      left: {
+        time: '',
+        memo: '',
+        status: {}
+      },
+      right: {
+        time: '',
+        memo: '',
+        status: {}
+      }
+    }]
+  },
   computed: {
     portName: function () {
+      // パラメータから港名を設定
       switch (this.$route.params.port) {
         case 'taketomi':
           return '竹富島航路'
@@ -74,6 +103,7 @@ export default {
       }
     },
     companyName: function () {
+      // パラメータから会社名を設定
       switch (this.$route.params.company) {
         case 'anei':
           return '安栄観光'

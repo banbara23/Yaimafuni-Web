@@ -1,29 +1,33 @@
 <template>
   <div id='main'>
     <table class="bordered">
-      <thead class="blue darken-3 white-text" v-if="header">
+      <thead class="white-text blue darken-3">
         <tr>
-          <th colspan="2">{{header.left}}</th>
-          <th colspan="2">{{header.right}}</th>
+          <th v-if="header.left" class="center"
+              colspan="2">{{header.left}}</th>
+          <th v-if="header.right" class="center"
+              colspan="2">{{header.right}}</th>
         </tr>
       </thead>
-      <tbody v-if="rows">
+      <tbody class="white" v-if="rows">
         <tr v-for="row in rows">
-          <td>{{row.left.time}}
+          <td class="center">{{row.left.time}}
             <span v-if="row.left.memo">
-              <br>{{row.left.memo}}</span>
+                  <br>{{row.left.memo}}</span>
           </td>
           <td class="valign-wrapper">
-            <img v-if="row.left.status.code" :src="`../../static/${row.left.status.code}.svg`">
-            {{row.left.status.text}}</td>
-          <td>
+            <img v-if="row.left.status.code"
+                 :src="`../../static/${row.left.status.code}.svg`"> {{row.left.status.text}}
+          </td>
+          <td class="center">
             {{row.right.time}}
             <span v-if="row.right.memo">
-              <br>{{row.right.memo}}</span>
+                  <br>{{row.right.memo}}</span>
           </td>
           <td class="valign-wrapper">
-            <img v-if="row.right.status.code" :src="`../../static/${row.right.status.code}.svg`">
-            {{row.right.status.text}}</td>
+            <img v-if="row.right.status.code"
+                 :src="`../../static/${row.right.status.code}.svg`"> {{row.right.status.text}}
+          </td>
           </td>
         </tr>
       </tbody>
@@ -45,6 +49,7 @@ export default {
 table {
   background-color: #FFFFFF;
 }
+
 td img {
   widows: 18px;
   height: 18px;

@@ -1,8 +1,8 @@
 <template>
   <div class="detailCard">
     <div class="card">
-      <div class="card-content" v-if="data">
-        <span class="card-title"> {{data.portName}}  - {{company}}</span>
+      <div class="card-content">
+        <span v-if="data.portName" class="card-title"> {{data.portName}}  - {{company}}</span>
         <h5 :class="getClass">{{data.status.text}}</h5>
         <p v-if="data.comment"> {{data.comment}}</p>
       </div>
@@ -19,7 +19,7 @@ export default {
       data: {
         comment: '',
         status: {
-          code: '読み込み中',
+          code: '',
           text: ''
         }
       }
