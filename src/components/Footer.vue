@@ -31,7 +31,7 @@
     <div class="footer-copyright">
       <div class="container">
         © 2017 やいまふに
-        <!--<a class="grey-text text-lighten-4 right" href="#!">More Links</a>-->
+        <!--<a class="grey-text text-lighten-4 right" href="about">作成者について</a>-->
       </div>
     </div>
   </footer>

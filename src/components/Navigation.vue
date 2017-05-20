@@ -11,6 +11,5 @@
 #navi {
   overflow: auto;
   font-size: xx-large;
-  margin-bottom: 30px;
 }
 </style>
