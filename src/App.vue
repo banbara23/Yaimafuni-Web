@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <navi />
+    <navi id="navi"/>
     <div class="container">
       <router-view></router-view>
     </div>
@@ -25,16 +25,13 @@ export default {
 </script>
 
 <style>
-a {
-  color: #2c3e50;
-}
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  /*color: #2c3e50;*/
   background-color: #00b1cd;
   background-size: 40%;
   background-image: url('./assets/sun.svg');
@@ -42,7 +39,9 @@ a {
   background-position: right top;
 }
 
-Navi {
+#navi {
   text-align: left;
+  padding-top: 10px;
+  margin-bottom: 100px;
 }
 </style>
