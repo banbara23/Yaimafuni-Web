@@ -4,7 +4,7 @@
     <div class="container">
       <router-view></router-view>
     </div>
-    <myfooter />
+    <myfooter id="footer" />
   </div>
 </template>
 
@@ -37,11 +37,17 @@ export default {
   background-image: url('./assets/sun.svg');
   background-repeat: no-repeat;
   background-position: right top;
+  min-height: 100vh;
+  height: 100%
 }
 
 #navi {
   text-align: left;
   padding-top: 10px;
   margin-bottom: 100px;
+}
+
+#footer {
+  margin-top:100px;
 }
 </style>
