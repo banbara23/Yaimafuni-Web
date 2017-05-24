@@ -3,9 +3,8 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">やいまふに について</h5>
-          <p class="grey-text text-lighten-4">石垣島と八重山諸島を結ぶ船の運行情報を、リアルタイムに表示しています。<br />また、八重山方言で八重山地方を「やいま」、船を「ふに」といいます。</p>
-          <p class="grey-text text-lighten-4"></p>
+          <h5 class="white-text">About site</h5>
+          <p class="grey-text text-lighten-4">やいまふに（八重山方言で’八重山の船'）は、石垣島と八重山諸島を結ぶ船のリアルタイムな運行情報と、天気情報を簡単に見ることができます。</p>
         </div>
 
         <div class="col l4 offset-l2 s12">
@@ -31,7 +30,7 @@
     <div class="footer-copyright">
       <div class="container">
         © 2017 やいまふに
-        <!--<a class="grey-text text-lighten-4 right" href="about">作成者について</a>-->
+        <a class="grey-text text-lighten-4 right" href="about">制作者</a>
       </div>
     </div>
   </footer>
