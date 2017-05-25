@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-<style  scoped>
+<style>
 table {
   background-color: #FFFFFF;
 }
@@ -62,4 +62,5 @@ td img {
   height: 18px;
   margin-right: 4px;
 }
+
 </style>
