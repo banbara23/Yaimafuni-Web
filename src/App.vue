@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <navi id="navi"/>
-    <div class="container">
+    <div id="contents" class="container">
       <router-view></router-view>
     </div>
     <myfooter id="footer" />
@@ -37,13 +37,19 @@ export default {
   background-repeat: no-repeat;
   background-position: right top;
   min-height: 100vh;
-  height: 100%
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #navi {
   text-align: left;
   padding-top: 10px;
   margin-bottom: 100px;
+}
+
+#contents {
+  flex: 1;
 }
 
 #footer {
