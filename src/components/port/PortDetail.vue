@@ -9,8 +9,8 @@
   
     <div class="row"
          v-if="timeTable">
-      <time-table :header='timeTable.header'
-                  :rows='timeTable.row' />
+      <time-table :header='detail.timeTable.header'
+                  :rows='detail.timeTable.row' />
     </div>
   </div>
 </template>
@@ -42,13 +42,6 @@ export default {
       detail: {
         source: db.ref(this.$route.params.company)
           .child(this.$route.params.port),
-        asObject: true
-      },
-      timeTable: {
-        source: db.ref(this.$route.params.company)
-          .child('detail')
-          .child(this.$route.params.port)
-          .child('timeTable'),
         asObject: true
       }
     }

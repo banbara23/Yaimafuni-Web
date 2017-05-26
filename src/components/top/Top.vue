@@ -107,7 +107,7 @@ export default {
       asObject: true
     },
     port: {
-      source: db.ref('/port'),
+      source: db.ref('/top_port'),
       asObject: true
     }
   },

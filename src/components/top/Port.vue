@@ -62,7 +62,7 @@ export default {
 			}
 			else if (this.data.anei.status.code == 'suspend') {
 				return {
-					amber: true
+					red: true
 				}
 			}
 			else {
@@ -89,7 +89,7 @@ export default {
 			}
 			else if (this.data.ykf.status.code == 'suspend') {
 				return {
-					amber: true
+					red: true
 				}
 			}
 			else {
@@ -116,7 +116,7 @@ export default {
 			}
 			else if (this.data.dream.status.code == 'suspend') {
 				return {
-					orange: true
+					red: true
 				}
 			}
 			else {
