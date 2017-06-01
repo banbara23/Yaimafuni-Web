@@ -12,7 +12,7 @@
 					<badge v-if="data.anei.status"
 					       :status="data.anei.status" />
 					<div v-if="data.anei.comment">
-						<span class="collections-content truncate grey-text">{{data.anei.comment}}</span>
+						<span class="collections-content truncate blue-grey-text">{{data.anei.comment}}</span>
 					</div>
 					<div v-else>
 						<!--<br />-->
