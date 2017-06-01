@@ -56,7 +56,7 @@ export default {
 
 <style scorped>
 div#card-header {
-  padding: 8px 24px 12px 24px;
+  padding: 10px 20px 10px 20px;
   /*font-size: 16px;*/
 }
 
