@@ -1,8 +1,6 @@
 <template>
   <div id="portDetail">
-    <!--{{timeTable}}-->
     <div class="row">
-      <!--<h5>{{companyName}}</h5>-->
       <Card :data='detail'
             :company='companyName' />
     </div>

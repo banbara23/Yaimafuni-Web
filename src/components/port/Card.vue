@@ -1,9 +1,13 @@
 <template>
   <div class="detailCard">
     <div class="card">
+      <div id="card-header" class="blue darken-3 white-text">
+        <h4>{{data.portName}}</h4>
+        <span>{{company}}</span>
+      </div>
       <div class="card-content">
-        <span v-if="data.portName" class="card-title"> {{data.portName}}  - {{company}}</span>
-        <h5 :class="getClass">{{data.status.text}}</h5>
+        <!--<span v-if="data.portName" class="card-title"> {{data.portName}}</span>-->
+        <h3 :class="getClass">{{data.status.text}}</h3>
         <p v-if="data.comment"> {{data.comment}}</p>
       </div>
     </div>
@@ -51,5 +55,12 @@ export default {
 </script>
 
 <style scorped>
+div#card-header {
+  padding: 8px 24px 12px 24px;
+  /*font-size: 16px;*/
+}
 
+/*div#card-header span {
+  font-weight: bold;
+}*/
 </style>
