@@ -39,8 +39,9 @@
         </div>
       </div>
       <div class="col s12 m12 l6">
+        <!-- todo: blankは将来外す-->
         <a class="waves-effect waves-teal btn-large orange"
-           href="https://weather.yahoo.co.jp/weather/47/9410.html">天気を詳しく見る</a>
+           href="https://weather.yahoo.co.jp/weather/47/9410.html" target="_blank">天気を詳しく見る</a>
       </div>
     </div>
   </div>
