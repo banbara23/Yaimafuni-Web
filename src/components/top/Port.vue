@@ -8,7 +8,7 @@
 			             v-if="data.anei"
 			             class="collection-item black-text">
 				<div class="row">
-					<span class="collections-title">安栄観光</span>
+					<span>安栄観光</span>
 					<badge v-if="data.anei.status"
 					       :status="data.anei.status" />
 					<div v-if="data.anei.comment">
@@ -70,10 +70,6 @@ export default {
 <style scoped>
 .row {
 	margin-bottom: 0;
-}
-
-.collections-title {
-	font-weight: 500;
 }
 
 .collections-content {

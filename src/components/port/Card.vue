@@ -7,7 +7,7 @@
       </div>
       <div class="card-content">
         <!--<span v-if="data.portName" class="card-title"> {{data.portName}}</span>-->
-        <h3 :class="getClass">{{data.status.text}}</h3>
+        <h4 :class="getClass">{{data.status.text}}</h4>
         <p v-if="data.comment"> {{data.comment}}</p>
       </div>
     </div>
