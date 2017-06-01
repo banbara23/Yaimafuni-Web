@@ -56,7 +56,9 @@ export default {
 table {
   background-color: #FFFFFF;
 }
-
+td {
+  font-size: 14px;
+}
 td img {
   widows: 18px;
   height: 18px;
