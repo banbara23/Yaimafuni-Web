@@ -7,32 +7,31 @@
 			<router-link :to="{ path:`detail/${portCode}/anei` }"
 			             v-if="data.anei"
 			             class="collection-item black-text">
-				安栄観光
-				<span class="new badge"
-				      v-if="data.anei.status"
-				      v-bind:class="aneiColor"
-				      :data-badge-caption="data.anei.status.text" />
+				<div class="row">
+					安栄観光
+					<badge v-if="data.anei.status"
+								 :status="data.anei.status" />
+				</div>
 			</router-link>
-	
 			<router-link :to="{ path:`detail/${portCode}/ykf` }"
 			             v-if="data.ykf"
 			             class="collection-item black-text">
-				八重山観光フェリー
-				<span class="new badge"
-				      v-if="data.ykf.status"
-				      v-bind:class="ykfColor"
-				      :data-badge-caption="data.ykf.status.text" />
+				<div class="row">
+					八重山観光フェリー
+					<badge v-if="data.ykf.status"
+								 :status="data.ykf.status" />
+				</div>
 				</span>
 			</router-link>
 	
 			<router-link :to="{ path:`detail/${portCode}/dream` }"
 			             v-if="data.dream"
 			             class="collection-item black-text">
-				石垣ドリーム観光
-				<span class="new badge"
-				      v-if="data.dream.status"
-				      v-bind:class="dreamColor"
-				      :data-badge-caption="data.dream.status.text" />
+				<div class="row">
+					石垣ドリーム観光
+					<badge v-if="data.dream.status"
+								 :status="data.dream.status" />
+				</div>
 				</span>
 			</router-link>
 		</div>
@@ -40,9 +39,13 @@
 </template>
   
 <script>
+import badge from './Badge'
 export default {
 	name: 'port',
 	props: ['data', 'title', 'portCode'],
+	components: {
+		badge
+	},
 	computed: {
 		aneiColor: function () {
 			if (this.data.anei.status.code == 'normal') {
@@ -130,6 +133,10 @@ export default {
 </script>
 
 <style>
-
+/*span#badge {
+	font-weight: 300;
+	border-radius: 2px;
+	background-clip:padding-box;
+}*/
 </style>
 
