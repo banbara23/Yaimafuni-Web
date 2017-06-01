@@ -8,9 +8,15 @@
 			             v-if="data.anei"
 			             class="collection-item black-text">
 				<div class="row">
-					安栄観光
+					<span class="collections-title">安栄観光</span>
 					<badge v-if="data.anei.status"
-								 :status="data.anei.status" />
+					       :status="data.anei.status" />
+					<div v-if="data.anei.comment">
+						<span class="collections-content truncate grey-text">{{data.anei.comment}}</span>
+					</div>
+					<div v-else>
+						<!--<br />-->
+					</div>
 				</div>
 			</router-link>
 			<router-link :to="{ path:`detail/${portCode}/ykf` }"
@@ -19,7 +25,13 @@
 				<div class="row">
 					八重山観光フェリー
 					<badge v-if="data.ykf.status"
-								 :status="data.ykf.status" />
+					       :status="data.ykf.status" />
+					<div v-if="data.ykf.comment">
+						<span class="collections-content truncate grey-text">{{data.ykf.comment}}</span>
+					</div>
+					<div v-else>
+						<!--<br />-->
+					</div>
 				</div>
 				</span>
 			</router-link>
@@ -30,7 +42,13 @@
 				<div class="row">
 					石垣ドリーム観光
 					<badge v-if="data.dream.status"
-								 :status="data.dream.status" />
+					       :status="data.dream.status" />
+					<div v-if="data.dream.comment">
+						<span class="collections-content truncate grey-text">{{data.dream.comment}}</span>
+					</div>
+					<div v-else>
+						<!--<br />-->
+					</div>
 				</div>
 				</span>
 			</router-link>
@@ -45,94 +63,30 @@ export default {
 	props: ['data', 'title', 'portCode'],
 	components: {
 		badge
-	},
-	computed: {
-		aneiColor: function () {
-			if (this.data.anei.status.code == 'normal') {
-				return {
-					blue: true
-				}
-			}
-			else if (this.data.anei.status.code == 'cancel') {
-				return {
-					red: true
-				}
-			}
-			else if (this.data.anei.status.code == 'cation') {
-				return {
-					orange: true
-				}
-			}
-			else if (this.data.anei.status.code == 'suspend') {
-				return {
-					red: true
-				}
-			}
-			else {
-				return {
-					orange: true
-				}
-			}
-		},
-		ykfColor: function () {
-			if (this.data.ykf.status.code == 'normal') {
-				return {
-					blue: true
-				}
-			}
-			else if (this.data.ykf.status.code == 'cancel') {
-				return {
-					red: true
-				}
-			}
-			else if (this.data.ykf.status.code == 'cation') {
-				return {
-					orange: true
-				}
-			}
-			else if (this.data.ykf.status.code == 'suspend') {
-				return {
-					red: true
-				}
-			}
-			else {
-				return {
-					orange: true
-				}
-			}
-		},
-		dreamColor: function () {
-			if (this.data.dream.status.code == 'normal') {
-				return {
-					blue: true
-				}
-			}
-			else if (this.data.dream.status.code == 'cancel') {
-				return {
-					red: true
-				}
-			}
-			else if (this.data.dream.status.code == 'cation') {
-				return {
-					orange: true
-				}
-			}
-			else if (this.data.dream.status.code == 'suspend') {
-				return {
-					red: true
-				}
-			}
-			else {
-				return {
-					orange: true
-				}
-			}
-		}
 	}
 }
 </script>
 
-<style>
+<style scoped>
+.row {
+	margin-bottom: 0;
+}
+
+.collections-title {
+	font-weight: 500;
+}
+
+.collections-content {
+	/*margin: 10px 0px 0px 0px;*/
+	margin-top: 10px;
+	font-weight: 300;
+	/*font-size: 14px;*/
+}
+
+
+
+
+
 /*span#badge {
 	font-weight: 300;
 	border-radius: 2px;
