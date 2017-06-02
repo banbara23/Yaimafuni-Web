@@ -13,9 +13,11 @@ export default new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: [
   { path: '/', name: 'Top', component: Top },
-  { path: '/weather', component: WeatherDetail },
+  { path: '/weather', component: WeatherDetail},
   { path: '/companyDetail/:id', component: CompanyDetail },
-  { path: '/detail/:port/:company', component: PortDetail },
-  { path: '/about', component: About }
+  { path: '/port/:port/:company', component: PortDetail },
+  { path: '/about', component: About },
+  { path: '/detail/*', redirect: '/detail/:port/:company' },
+  { path: '*', redirect: '/' }
   ]
 })

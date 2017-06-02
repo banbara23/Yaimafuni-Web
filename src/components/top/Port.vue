@@ -4,7 +4,7 @@
 			<div class="collection-header orange darken-1 white-text">
 				<h5>{{title}}</h5>
 			</div>
-			<router-link :to="{ path:`detail/${portCode}/anei` }"
+			<router-link :to="{ path:`port/${portCode}/anei` }"
 			             v-if="data.anei"
 			             class="collection-item black-text">
 				<div class="row">
@@ -19,7 +19,7 @@
 					</div>
 				</div>
 			</router-link>
-			<router-link :to="{ path:`detail/${portCode}/ykf` }"
+			<router-link :to="{ path:`port/${portCode}/ykf` }"
 			             v-if="data.ykf"
 			             class="collection-item black-text">
 				<div class="row">
@@ -36,7 +36,7 @@
 				</span>
 			</router-link>
 	
-			<router-link :to="{ path:`detail/${portCode}/dream` }"
+			<router-link :to="{ path:`port/${portCode}/dream` }"
 			             v-if="data.dream"
 			             class="collection-item black-text">
 				<div class="row">
