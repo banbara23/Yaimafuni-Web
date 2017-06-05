@@ -30,7 +30,9 @@
     <div class="footer-copyright">
       <div class="container">
         © 2017 やいまふに
-        <a class="grey-text text-lighten-4 right" href="about">制作者</a>
+        <router-link to="/about" class="grey-text text-lighten-4 right">
+          制作者
+        </router-link>
       </div>
     </div>
   </footer>
