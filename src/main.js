@@ -4,9 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import vuefire from 'vuefire'
+import vuex from 'vuex'
+import { sync } from 'vuex-router-sync'
 
 Vue.config.productionTip = false
 Vue.use(vuefire)
+Vue.use(vuex)
 
 /* eslint-disable no-new */
 new Vue({
