@@ -57,6 +57,7 @@
 import Port from './Port'
 import Weather from './TopWeather'
 import firebase from 'firebase'
+import { mapState } from 'vuex'
 const db = firebase.database()
 
 export default {

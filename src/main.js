@@ -9,7 +9,7 @@ import { sync } from 'vuex-router-sync'
 
 Vue.config.productionTip = false
 Vue.use(vuefire)
-Vue.use(vuex)
+Vue.use(vuefire)
 
 /* eslint-disable no-new */
 new Vue({
