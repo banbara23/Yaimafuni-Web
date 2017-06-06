@@ -11,7 +11,6 @@ const WeatherDetail = () => System.import('@/components/weather/WeatherDetail')
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: [
   { path: '/', name: 'Top', component: Top },
@@ -20,6 +19,6 @@ export default new Router({
   { path: '/port/:port/:company', component: PortDetail },
   { path: '/about', component: About },
   { path: '/detail/*', redirect: '/detail/:port/:company' },
-  { path: '*', redirect: '/' }
+  { path: '*', redirect: '/404.html' }
   ]
 })
