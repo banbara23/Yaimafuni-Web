@@ -2,13 +2,12 @@
   <div class="detailCard">
     <div class="card">
       <div id="card-header" class="blue darken-3 white-text">
-        <h4>{{data.portName}}</h4>
+        <h4>{{cardStatus.portName}}</h4>
         <span>{{company}}</span>
       </div>
       <div class="card-content">
-        <!--<span v-if="data.portName" class="card-title"> {{data.portName}}</span>-->
-        <h4 :class="getClass">{{data.status.text}}</h4>
-        <p v-if="data.comment"> {{data.comment}}</p>
+        <h4 :class="getClass">{{cardStatus.status.text}}</h4>
+        <p v-if="cardStatus.comment"> {{cardStatus.comment}}</p>
       </div>
     </div>
   </div>
@@ -17,7 +16,7 @@
 <script>
 export default {
   name: 'detailCard',
-  props: ['data', 'company'],
+  props: ['cardStatus', 'company'],
   data() {
     return {
       data: {
@@ -31,8 +30,9 @@ export default {
   },
   computed: {
     getClass: function () {
+      console.log(this.data.status.code)
       let color;
-      switch (this.data.status.code) {
+      switch (this.cardStatus.status.code) {
         case 'normal':
           color = 'blue';
           break;
@@ -43,7 +43,7 @@ export default {
           color = 'orange';
           break;
         case 'suspend':
-          color = 'amber';
+          color = 'red';
           break;
         default:
           color = 'orange';

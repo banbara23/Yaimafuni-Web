@@ -1,7 +1,7 @@
 <template>
   <div id='main'>
     <table class="bordered">
-      <thead class="white-text blue darken-3">
+      <thead v-if="header" class="white-text blue darken-3">
         <tr>
           <th v-if="header.left"
               class="center"

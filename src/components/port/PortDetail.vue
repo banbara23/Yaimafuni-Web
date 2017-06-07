@@ -2,7 +2,7 @@
   <div id="portDetail">
     <vue-progress-bar />
     <div class="row">
-      <Card :data='detail'
+      <Card :cardStatus='detail'
             :company='companyName' />
     </div>
   
@@ -30,10 +30,7 @@ export default {
     return {
       params: this.$route.params,
       detail: null,
-      timeTable: {
-        header: null,
-        row: null
-      }
+      timeTable: null
     }
   },
   firebase() {
@@ -51,10 +48,18 @@ export default {
   created() {
     this.$Progress.start();
     this.detail = {
-      portName: '',
+      portName: '...',
+      comment: '',
       status: {
         code: '',
         text: ''
+      },
+      timeTable: {
+        header: {
+          left: null,
+          right: null
+        },
+        rows: []
       }
     }
 
