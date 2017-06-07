@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <div class="row">
+      <vue-progress-bar></vue-progress-bar>
       <div class="col s12 m12 l6">
         <div class="card">
           <div id="card-header"
@@ -104,10 +105,14 @@ export default {
   firebase: {
     weather: {
       source: db.ref('/weather'),
-      asObject: true
+      asObject: true,
+      readyCallback: function () {
+        this.$Progress.finish();
+      }
     }
   },
   created() {
+    this.$Progress.start();
     this.weather = {
       today: {
         date: '...',
@@ -136,6 +141,7 @@ export default {
 .card-panel {
   margin-top: 0px;
 }
+
 table {
   margin-top: 10px;
 }

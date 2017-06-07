@@ -1,5 +1,6 @@
 <template>
   <div id="main">
+    <vue-progress-bar />
     <div class="row">
   
       <div class="col s12 m12 l6">
@@ -58,6 +59,7 @@ import Port from './Port'
 import Weather from './TopWeather'
 import firebase from 'firebase'
 const db = firebase.database()
+let progress;
 
 export default {
   name: 'main',
@@ -74,6 +76,8 @@ export default {
     }
   },
   created() {
+    progress = 0;
+    this.$Progress.start();
     // 初期値設定
     const initStatus = {
       anei: {
@@ -104,11 +108,23 @@ export default {
   firebase: {
     weatherToday: {
       source: db.ref('/weather/today'),
-      asObject: true
+      asObject: true,
+      readyCallback: function () {
+        progress++
+        if (progress > 1) {
+          this.$Progress.finish();
+        }
+      }
     },
     port: {
       source: db.ref('/top_port'),
-      asObject: true
+      asObject: true,
+      readyCallback: function () {
+        progress++
+        if (progress > 1) {
+          this.$Progress.finish();
+        }
+      }
     }
   },
   components: {

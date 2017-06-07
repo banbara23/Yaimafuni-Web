@@ -1,5 +1,6 @@
 <template>
   <div id="portDetail">
+    <vue-progress-bar />
     <div class="row">
       <Card :data='detail'
             :company='companyName' />
@@ -40,11 +41,15 @@ export default {
       detail: {
         source: db.ref(this.$route.params.company)
           .child(this.$route.params.port),
-        asObject: true
+        asObject: true,
+        readyCallback: function () {
+          this.$Progress.finish();
+        }
       }
     }
   },
   created() {
+    this.$Progress.start();
     this.detail = {
       portName: '',
       status: {
