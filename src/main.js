@@ -7,7 +7,7 @@ import vuefire from 'vuefire'
 import VueProgressBar from 'vue-progressbar'
 
 Vue.config.productionTip = false
-Vue.use(vuefire,)
+Vue.use(vuefire)
 
 const options = {
   color: '#bffaf3',
