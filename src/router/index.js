@@ -3,11 +3,11 @@ import Router from 'vue-router'
 import Top from '@/components/top/Top'
 import CompanyDetail from '@/components/company/CompanyDetail'
 import PortDetail from '@/components/port/PortDetail'
-// import WeatherDetail from '@/components/weather/WeatherDetail'
+import WeatherDetail from '@/components/weather/WeatherDetail'
 import About from '@/components/about'
 
 // const WeatherDetail = resolve => require(['@/components/top/Top'], resolve)
-const WeatherDetail = () => System.import('@/components/weather/WeatherDetail')
+// const WeatherDetail = () => System.import('@/components/weather/WeatherDetail')
 Vue.use(Router)
 
 export default new Router({
