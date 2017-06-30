@@ -89,7 +89,14 @@ var webpackConfig = merge(baseWebpackConfig, {
       { from: path.resolve(__dirname, '../404.html'),
         to: config.build.assetsRoot
       }
-    ])
+    ]),
+    // https://www.bountysource.com/issues/44001123-webpack-import-materializecss-but-can-t-call-methods
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.$': 'jquery',
+        'window.jQuery': 'jquery',
+    })
   ]
 })
 
