@@ -46,7 +46,7 @@
       </div>
   
       <div class="col s12 m12 l6">
-        <router-link to="/Weather">
+        <router-link to="/weather">
           <weather :weather="weatherToday" />
         </router-link>
       </div>
