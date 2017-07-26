@@ -30,7 +30,7 @@
     <div class="footer-copyright">
       <div class="container">
         © 2017 やいまふに
-        <router-link class="grey-text text-lighten-4 right" to="about">制作者</router-link>
+        <router-link class="grey-text text-lighten-4 right" to="about">制作者:ikemura</router-link>
       </div>
     </div>
   </footer>
