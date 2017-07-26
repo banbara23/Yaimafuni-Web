@@ -38,13 +38,17 @@
               :title="oohara.title"
               :portCode="oohara.code" />
       </div>
-  
+      
       <div class="col s12 m12 l6">
         <port :data="port.hateruma"
               :title="hateruma.title"
               :portCode="hateruma.code" />
       </div>
-  
+
+       <div class="col s12 m12 l6">
+        <company :data="company" />
+      </div>
+
       <div class="col s12 m12 l6">
         <router-link to="/weather">
           <weather :weather="weatherToday" />
@@ -57,6 +61,7 @@
 <script>
 import Port from './Port'
 import Weather from './TopWeather'
+import Company from './company/Company'
 import firebase from 'firebase'
 const db = firebase.database()
 let progress;
@@ -111,7 +116,7 @@ export default {
       asObject: true,
       readyCallback: function () {
         progress++
-        if (progress > 1) {
+        if (progress > 2) {
           this.$Progress.finish();
         }
       }
@@ -121,15 +126,26 @@ export default {
       asObject: true,
       readyCallback: function () {
         progress++
-        if (progress > 1) {
+        if (progress > 2) {
           this.$Progress.finish();
         }
       }
-    }
+    },
+    company: {
+        source: db.ref('/top_company'),
+        asObject: true,
+        readyCallback: function () {
+          progress++
+          if (progress > 2) {
+            this.$Progress.finish();
+          }
+        }
+      }
   },
   components: {
     Weather,
-    Port
+    Port,
+    Company
   }
 }
 </script>

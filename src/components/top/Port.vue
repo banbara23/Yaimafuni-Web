@@ -57,7 +57,7 @@
 </template>
   
 <script>
-import badge from './Badge'
+import badge from './PortBadge'
 export default {
 	name: 'port',
 	props: ['data', 'title', 'portCode'],
