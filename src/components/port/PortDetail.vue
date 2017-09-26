@@ -2,14 +2,11 @@
   <div id="portDetail">
     <vue-progress-bar />
     <div class="row">
-      <Card :cardStatus='detail'
-            :company='companyName' />
+      <Card :cardStatus='detail' :company='companyName' />
     </div>
-  
-    <div class="row"
-         v-if="timeTable">
-      <time-table :header='detail.timeTable.header'
-                  :rows='detail.timeTable.row' />
+
+    <div class="row" v-if="detail.timeTable">
+      <time-table :header='detail.timeTable.header' :rows='detail.timeTable.row' />
     </div>
   </div>
 </template>
@@ -39,7 +36,7 @@ export default {
         source: db.ref(this.$route.params.company)
           .child(this.$route.params.port),
         asObject: true,
-        readyCallback: function () {
+        readyCallback: function() {
           this.$Progress.finish();
         }
       }
@@ -88,7 +85,7 @@ export default {
     }
   },
   computed: {
-    portName: function () {
+    portName: function() {
       // パラメータから港名を設定
       switch (this.$route.params.port) {
         case 'taketomi':
@@ -109,7 +106,7 @@ export default {
           return ''
       }
     },
-    companyName: function () {
+    companyName: function() {
       // パラメータから会社名を設定
       switch (this.$route.params.company) {
         case 'anei':
