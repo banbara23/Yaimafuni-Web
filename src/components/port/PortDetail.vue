@@ -2,8 +2,7 @@
   <div id="portDetail">
     <vue-progress-bar />
     <div class="row">
-      <Card :cardStatus='detail'
-            :company='companyName' />
+      <Card :cardStatus='detail' :company='companyName' />
     </div>
   
     <div class="row"
