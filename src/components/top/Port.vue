@@ -14,9 +14,6 @@
 					<div v-if="data.anei.comment">
 						<span class="collections-content truncate blue-grey-text">{{data.anei.comment}}</span>
 					</div>
-					<div v-else>
-						<!--<br />-->
-					</div>
 				</div>
 			</router-link>
 			<router-link :to="{ path:`port/${portCode}/ykf` }"
@@ -29,27 +26,9 @@
 					<div v-if="data.ykf.comment">
 						<span class="collections-content truncate grey-text">{{data.ykf.comment}}</span>
 					</div>
-					<div v-else>
-						<!--<br />-->
-					</div>
 				</div>
 			</router-link>
-	
-			<!-- <router-link :to="{ path:`port/${portCode}/dream` }"
-			             v-if="data.dream"
-			             class="collection-item black-text">
-				<div class="row">
-					石垣ドリーム観光
-					<badge v-if="data.dream.status"
-					       :status="data.dream.status" />
-					<div v-if="data.dream.comment">
-						<span class="collections-content truncate grey-text">{{data.dream.comment}}</span>
-					</div>
-					<div v-else>
 
-					</div>
-				</div>
-			</router-link> -->
 		</div>
 	</div>
 </template>
@@ -71,20 +50,9 @@ export default {
 }
 
 .collections-content {
-	/*margin: 10px 0px 0px 0px;*/
 	margin-top: 10px;
 	font-weight: 300;
-	/*font-size: 14px;*/
 }
 
-
-
-
-
-/*span#badge {
-	font-weight: 300;
-	border-radius: 2px;
-	background-clip:padding-box;
-}*/
 </style>
 
