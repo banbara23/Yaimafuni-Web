@@ -33,10 +33,9 @@
 						<!--<br />-->
 					</div>
 				</div>
-				</span>
 			</router-link>
 	
-			<router-link :to="{ path:`port/${portCode}/dream` }"
+			<!-- <router-link :to="{ path:`port/${portCode}/dream` }"
 			             v-if="data.dream"
 			             class="collection-item black-text">
 				<div class="row">
@@ -47,11 +46,10 @@
 						<span class="collections-content truncate grey-text">{{data.dream.comment}}</span>
 					</div>
 					<div v-else>
-						<!--<br />-->
+
 					</div>
 				</div>
-				</span>
-			</router-link>
+			</router-link> -->
 		</div>
 	</div>
 </template>
