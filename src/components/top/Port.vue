@@ -34,25 +34,24 @@
 </template>
   
 <script>
-import badge from './Badge'
+import badge from "./Badge";
 export default {
-	name: 'port',
-	props: ['data', 'title', 'portCode'],
-	components: {
-		badge
-	}
-}
+  name: "port",
+  props: ["data", "title", "portCode"],
+  components: {
+    badge
+  }
+};
 </script>
 
 <style scoped>
 .row {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .collections-content {
-	margin-top: 10px;
-	font-weight: 300;
+  margin-top: 10px;
+  font-weight: 300;
 }
-
 </style>
 
